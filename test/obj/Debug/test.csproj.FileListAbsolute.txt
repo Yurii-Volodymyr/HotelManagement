@@ -1,0 +1,15 @@
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\test.exe.config
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\test.exe
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\test.pdb
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\EntityFramework.dll
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\EntityFramework.xml
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\obj\Debug\test.csprojAssemblyReference.cache
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\obj\Debug\test.csproj.CopyComplete
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\obj\Debug\test.exe
+C:\Users\Jerzy\source\repos\WindowsFormsApp\test\obj\Debug\test.pdb

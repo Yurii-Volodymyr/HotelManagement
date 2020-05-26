@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.label8 = new System.Windows.Forms.Label();
             this.txtPassport = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.dataBDay = new System.Windows.Forms.DateTimePicker();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -47,7 +47,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateEntryDate = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderClientDataSet = new WindowsFormsApp1.OrderClientDataSet();
             this.txtTotalCost = new System.Windows.Forms.TextBox();
@@ -57,7 +56,7 @@
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.radioMale = new System.Windows.Forms.RadioButton();
             this.ordersTableAdapter = new WindowsFormsApp1.OrderClientDataSetTableAdapters.OrdersTableAdapter();
-            this.btnPerformOperation = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,9 +68,11 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderClientDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -89,17 +90,17 @@
             this.txtPassport.Location = new System.Drawing.Point(462, 179);
             this.txtPassport.Name = "txtPassport";
             this.txtPassport.Size = new System.Drawing.Size(156, 22);
-            this.txtPassport.TabIndex = 9;
+            this.txtPassport.TabIndex = 10;
             // 
-            // button2
+            // btnBack
             // 
-            this.button2.Location = new System.Drawing.Point(1062, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 33);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Back";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnBack.Location = new System.Drawing.Point(1062, 172);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(81, 33);
+            this.btnBack.TabIndex = 21;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtEmail
             // 
@@ -188,7 +189,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(1062, 114);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(81, 33);
-            this.btnUpdate.TabIndex = 12;
+            this.btnUpdate.TabIndex = 20;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -209,7 +210,7 @@
             this.dateDepartureDate.Location = new System.Drawing.Point(661, 179);
             this.dateDepartureDate.Name = "dateDepartureDate";
             this.dateDepartureDate.Size = new System.Drawing.Size(153, 22);
-            this.dateDepartureDate.TabIndex = 11;
+            this.dateDepartureDate.TabIndex = 12;
             // 
             // label6
             // 
@@ -227,7 +228,7 @@
             this.dateEntryDate.Location = new System.Drawing.Point(661, 117);
             this.dateEntryDate.Name = "dateEntryDate";
             this.dateEntryDate.Size = new System.Drawing.Size(153, 22);
-            this.dateEntryDate.TabIndex = 10;
+            this.dateEntryDate.TabIndex = 11;
             // 
             // label9
             // 
@@ -239,34 +240,6 @@
             this.label9.Size = new System.Drawing.Size(205, 36);
             this.label9.TabIndex = 65;
             this.label9.Text = "HOTEL ROYAL";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.clientNameDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.roomNumberDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn9});
-            this.dataGridView1.DataSource = this.ordersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 282);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1162, 383);
-            this.dataGridView1.TabIndex = 15;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_ColumnHeaderMouseClick);
             // 
             // ordersBindingSource
             // 
@@ -283,7 +256,7 @@
             this.txtTotalCost.Location = new System.Drawing.Point(858, 179);
             this.txtTotalCost.Name = "txtTotalCost";
             this.txtTotalCost.Size = new System.Drawing.Size(156, 22);
-            this.txtTotalCost.TabIndex = 67;
+            this.txtTotalCost.TabIndex = 14;
             // 
             // label10
             // 
@@ -300,7 +273,7 @@
             this.txtRoomNum.Location = new System.Drawing.Point(858, 117);
             this.txtRoomNum.Name = "txtRoomNum";
             this.txtRoomNum.Size = new System.Drawing.Size(156, 22);
-            this.txtRoomNum.TabIndex = 66;
+            this.txtRoomNum.TabIndex = 13;
             // 
             // label11
             // 
@@ -316,7 +289,7 @@
             // 
             this.radioFemale.AutoSize = true;
             this.radioFemale.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioFemale.Location = new System.Drawing.Point(543, 114);
+            this.radioFemale.Location = new System.Drawing.Point(75, 21);
             this.radioFemale.Name = "radioFemale";
             this.radioFemale.Size = new System.Drawing.Size(75, 21);
             this.radioFemale.TabIndex = 9;
@@ -328,7 +301,7 @@
             // 
             this.radioMale.AutoSize = true;
             this.radioMale.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioMale.Location = new System.Drawing.Point(462, 114);
+            this.radioMale.Location = new System.Drawing.Point(2, 21);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(59, 21);
             this.radioMale.TabIndex = 8;
@@ -340,15 +313,17 @@
             // 
             this.ordersTableAdapter.ClearBeforeFill = true;
             // 
-            // btnPerformOperation
+            // groupBox1
             // 
-            this.btnPerformOperation.Location = new System.Drawing.Point(661, 669);
-            this.btnPerformOperation.Name = "btnPerformOperation";
-            this.btnPerformOperation.Size = new System.Drawing.Size(153, 23);
-            this.btnPerformOperation.TabIndex = 70;
-            this.btnPerformOperation.Text = "Perform Operation";
-            this.btnPerformOperation.UseVisualStyleBackColor = true;
-            this.btnPerformOperation.Click += new System.EventHandler(this.btnPerformOperation_Click);
+            this.groupBox1.Controls.Add(this.radioMale);
+            this.groupBox1.Controls.Add(this.radioFemale);
+            this.groupBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox1.Location = new System.Drawing.Point(462, 94);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(156, 47);
+            this.groupBox1.TabIndex = 70;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gender";
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -440,15 +415,40 @@
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.clientNameDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.roomNumberDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn9});
+            this.dataGridView1.DataSource = this.ordersBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 282);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1162, 383);
+            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
             // A_EditOrderAndClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1186, 704);
-            this.Controls.Add(this.btnPerformOperation);
-            this.Controls.Add(this.radioFemale);
-            this.Controls.Add(this.radioMale);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTotalCost);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtRoomNum);
@@ -457,7 +457,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtPassport);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.dataBDay);
             this.Controls.Add(this.txtName);
@@ -475,9 +475,11 @@
             this.Name = "A_EditOrderAndClient";
             this.Text = "EditOrderAndClient";
             this.Load += new System.EventHandler(this.A_EditOrderAndClient_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderClientDataSet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -487,7 +489,7 @@
 
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtPassport;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.DateTimePicker dataBDay;
         private System.Windows.Forms.TextBox txtName;
@@ -503,7 +505,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateEntryDate;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDayDataGridViewTextBoxColumn;
@@ -523,17 +524,18 @@
         private OrderClientDataSet orderClientDataSet;
         private System.Windows.Forms.BindingSource ordersBindingSource;
         private OrderClientDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
-        private System.Windows.Forms.Button btnPerformOperation;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

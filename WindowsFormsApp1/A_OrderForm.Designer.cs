@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.dateBDay = new System.Windows.Forms.DateTimePicker();
@@ -50,17 +51,22 @@ namespace WindowsFormsApp1
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.radioMale = new System.Windows.Forms.RadioButton();
             this.dateEntryDate = new System.Windows.Forms.DateTimePicker();
-            this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.roomsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtRoomNumber = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(58, 39);
+            this.button2.Location = new System.Drawing.Point(322, 322);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(39, 23);
+            this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 48;
-            this.button2.Text = "<-";
+            this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
@@ -240,13 +246,6 @@ namespace WindowsFormsApp1
             this.dateEntryDate.TabIndex = 41;
             this.dateEntryDate.Value = new System.DateTime(2020, 4, 3, 0, 0, 0, 0);
             // 
-            // txtRoomNumber
-            // 
-            this.txtRoomNumber.Location = new System.Drawing.Point(300, 209);
-            this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(200, 22);
-            this.txtRoomNumber.TabIndex = 44;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -257,12 +256,44 @@ namespace WindowsFormsApp1
             this.label9.TabIndex = 48;
             this.label9.Text = "Room Number";
             // 
+            // roomsDataSet
+            // 
+             this.roomsDataSetBindingSource.Position = 0;
+            // 
+            // roomsBindingSource
+            // 
+            this.roomsBindingSource.DataMember = "Rooms";
+            this.roomsBindingSource.DataSource = this.roomsDataSetBindingSource;
+            // 
+            // roomsTableAdapter
+            // 
+            // 
+            // txtRoomNumber
+            // 
+            this.txtRoomNumber.Location = new System.Drawing.Point(300, 209);
+            this.txtRoomNumber.Name = "txtRoomNumber";
+            this.txtRoomNumber.Size = new System.Drawing.Size(200, 22);
+            this.txtRoomNumber.TabIndex = 44;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roomsBindingSource, "RoomId", true));
+            this.comboBox1.DataSource = this.roomsBindingSource;
+            this.comboBox1.DisplayMember = "RoomNumber";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(300, 258);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(200, 24);
+            this.comboBox1.TabIndex = 49;
+            this.comboBox1.ValueMember = "RoomId";
+            // 
             // A_OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(531, 420);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtRoomNumber);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.radioMale);
@@ -288,6 +319,8 @@ namespace WindowsFormsApp1
             this.Name = "A_OrderForm";
             this.Text = "OrderForm";
             this.Load += new System.EventHandler(this.A_OrderForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.roomsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,7 +347,10 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.RadioButton radioFemale;
         private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.DateTimePicker dateEntryDate;
-        private System.Windows.Forms.TextBox txtRoomNumber;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.BindingSource roomsDataSetBindingSource;
+        private System.Windows.Forms.BindingSource roomsBindingSource;
+        private System.Windows.Forms.TextBox txtRoomNumber;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
             //show form
             hideSubMenu();
         }
-
+        //-----------
         private void btnRoomList_Click(object sender, EventArgs e)
         {
             openChildForm(new RoomList());
@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
             //show form
             hideSubMenu();
         }
-
+        //-----------
         private void btnOrderRoom_Click(object sender, EventArgs e)
         {
             openChildForm(new A_OrderForm());

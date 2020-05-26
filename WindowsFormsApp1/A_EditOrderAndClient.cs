@@ -19,15 +19,18 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-        //back
-        private void button2_Click(object sender, EventArgs e)
+        /// <summary>
+        /// return to previous form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBack_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
             this.Close();
             form1.Show();
         }
         //ID variable used in Updating and Deleting Record
-        int ID = 0;
 
         private void A_EditOrderAndClient_Load(object sender, EventArgs e)
         {
@@ -37,36 +40,21 @@ namespace WindowsFormsApp1
 
         }
         int indexRow;
-
+        /// <summary>
+        /// updating data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">selected row</param>
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (indexRow < dataGridView1.Rows.Count && indexRow > 0)
+            if (indexRow >= 0 && indexRow <= dataGridView1.Rows.Count)
             {
-
-
-                DataGridViewRow newDataRow = dataGridView1.Rows[indexRow];
-                newDataRow.Cells[1].Value = txtName.Text;
-                newDataRow.Cells[2].Value = dataBDay.Value;
-                newDataRow.Cells[3].Value = txtPhone.Text;
-                newDataRow.Cells[4].Value = txtEmail.Text;
-                if (radioMale.Checked == true)
-                {
-                    newDataRow.Cells[5].Value = "Male";
-                }
-                else
-                {
-                    newDataRow.Cells[5].Value = "Female";
-                }
-                newDataRow.Cells[6].Value = txtPassport.Text;
-                newDataRow.Cells[7].Value = dateEntryDate.Value;
-                newDataRow.Cells[8].Value = dateDepartureDate.Value;
-                newDataRow.Cells[9].Value = txtRoomNum.Text;
-                newDataRow.Cells[10].Value = txtTotalCost.Text;
-
                 using (var db = new HotelWinFormsDbContext())
                 {
+                    var ordersList = db.Orders.ToList();
                     Order order = new Order();
-                    order.OrderId = indexRow;
+                    //id is not changing
+                    order.OrderId = ordersList[indexRow].OrderId;
                     order.ClientName = txtName.Text;
                     order.BirthDay = dataBDay.Value;
                     order.Phone = Convert.ToInt32(txtPhone.Text);
@@ -75,9 +63,10 @@ namespace WindowsFormsApp1
                     {
                         order.Gender = "Male";
                     }
-                    else
+                    if (radioFemale.Checked == true)
                     {
                         order.Gender = "Female";
+
                     }
                     order.Passport = txtPassport.Text;
                     order.EntryDate = dateEntryDate.Value;
@@ -89,6 +78,8 @@ namespace WindowsFormsApp1
                     int result = db.SaveChanges();
                     if (result > 0)
                     {
+                        this.ordersTableAdapter.Fill(this.orderClientDataSet.Orders);
+
                         MessageBox.Show("Order updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -107,16 +98,15 @@ namespace WindowsFormsApp1
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
-            if (indexRow < dataGridView1.Rows.Count && indexRow > 0)
+            if (indexRow <= dataGridView1.Rows.Count && indexRow >= 0)
             {
-
                 DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-                txtName.Text = row.Cells[1].Value.ToString();
-                dataBDay.Value = Convert.ToDateTime(row.Cells[2].Value);
-                txtPhone.Text = row.Cells[3].Value.ToString();
-                txtEmail.Text = row.Cells[4].Value.ToString();
-                if (row.Cells[5].Value.ToString().ToLower() == "male")
+                txtName.Text = row.Cells[clientNameDataGridViewTextBoxColumn.Index].Value.ToString();
+                dataBDay.Value = Convert.ToDateTime(row.Cells[dataGridViewTextBoxColumn2.Index].Value);
+                txtEmail.Text = row.Cells[dataGridViewTextBoxColumn3.Index].Value.ToString();
+                txtPhone.Text = row.Cells[dataGridViewTextBoxColumn4.Index].Value.ToString();
+                if (row.Cells[dataGridViewTextBoxColumn5.Index].Value.ToString().ToLower() == "male")
                 {
                     radioMale.Checked = true;
                 }
@@ -124,38 +114,12 @@ namespace WindowsFormsApp1
                 {
                     radioFemale.Checked = true;
                 }
-                txtPassport.Text = row.Cells[6].Value.ToString();
-                dateEntryDate.Value = Convert.ToDateTime(row.Cells[7].Value);
-                dateDepartureDate.Value = Convert.ToDateTime(row.Cells[8].Value);
-                txtRoomNum.Text = row.Cells[9].Value.ToString();
-                txtTotalCost.Text = row.Cells[10].Value.ToString();
+                txtPassport.Text = row.Cells[dataGridViewTextBoxColumn6.Index].Value.ToString();
+                dateEntryDate.Value = Convert.ToDateTime(row.Cells[dataGridViewTextBoxColumn7.Index].Value);
+                dateDepartureDate.Value = Convert.ToDateTime(row.Cells[dataGridViewTextBoxColumn8.Index].Value);
+                txtRoomNum.Text = row.Cells[roomNumberDataGridViewTextBoxColumn.Index].Value.ToString();
+                txtTotalCost.Text = row.Cells[dataGridViewTextBoxColumn9.Index].Value.ToString();
             }
-
-
-        }
-
-        private void btnPerformOperation_Click(object sender, EventArgs e)
-        {
-            using (var db = new HotelWinFormsDbContext())
-            {
-
-                var orders = db.Orders;
-                //int changes = 
-            }
-        }
-        private bool sortAscending = false;
-
-        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var db = new HotelWinFormsDbContext();
-            var orders = db.Orders;
-
-            var selectedol = dataGridView1.Columns[e.ColumnIndex].DataPropertyName;
-            if (sortAscending)
-                dataGridView1.DataSource = this.orderClientDataSet.Orders.OrderBy(dataGridView1.Columns[e.ColumnIndex].DataPropertyName).ToList();
-            else
-                dataGridView1.DataSource = list.OrderBy(dataGridView1.Columns[e.ColumnIndex].DataPropertyName).Reverse().ToList();
-            sortAscending = !sortAscending;
         }
     }
 }

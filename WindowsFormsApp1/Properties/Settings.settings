@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=.;Initial Catalog=HotelManagerDB;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="nnn" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ColumnHeader</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

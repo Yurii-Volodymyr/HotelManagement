@@ -42,18 +42,20 @@
             this.txtImgSource = new System.Windows.Forms.TextBox();
             this.txtPricePerWeek = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label9 = new System.Windows.Forms.Label();
-            this.roomsDataSet = new WindowsFormsApp1.RoomsDataSet();
-            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roomsTableAdapter = new WindowsFormsApp1.RoomsDataSetTableAdapters.RoomsTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioOrdered = new System.Windows.Forms.RadioButton();
+            this.radioAvailable = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBack
@@ -72,7 +74,7 @@
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(75, 32);
             this.btnInsert.TabIndex = 7;
-            this.btnInsert.Text = "Insert";
+            this.btnInsert.Text = "Add new";
             this.btnInsert.UseVisualStyleBackColor = true;
             this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
@@ -84,6 +86,7 @@
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -173,8 +176,9 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.dataGridView1.DataSource = this.roomsBindingSource;
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewCheckBoxColumn1});
+            this.dataGridView1.DataSource = this.bindingSource1;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.Location = new System.Drawing.Point(62, 306);
             this.dataGridView1.Name = "dataGridView1";
@@ -182,31 +186,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(813, 235);
             this.dataGridView1.TabIndex = 10;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.PeachPuff;
-            this.label9.Location = new System.Drawing.Point(351, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(205, 36);
-            this.label9.TabIndex = 66;
-            this.label9.Text = "HOTEL ROYAL";
-            // 
-            // roomsDataSet
-            // 
-            this.roomsDataSet.DataSetName = "RoomsDataSet";
-            this.roomsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // roomsBindingSource
-            // 
-            this.roomsBindingSource.DataMember = "Rooms";
-            this.roomsBindingSource.DataSource = this.roomsDataSet;
-            // 
-            // roomsTableAdapter
-            // 
-            this.roomsTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -250,12 +230,72 @@
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsAvailable";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "IsAvailable";
+            this.dataGridViewCheckBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // bindingSource1
+            // 
+          
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.PeachPuff;
+            this.label9.Location = new System.Drawing.Point(351, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(205, 36);
+            this.label9.TabIndex = 66;
+            this.label9.Text = "HOTEL ROYAL";
+            // 
+            // roomsTableAdapter
+            // 
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioOrdered);
+            this.groupBox1.Controls.Add(this.radioAvailable);
+            this.groupBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox1.Location = new System.Drawing.Point(561, 82);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(212, 37);
+            this.groupBox1.TabIndex = 71;
+            this.groupBox1.TabStop = false;
+            // 
+            // radioOrdered
+            // 
+            this.radioOrdered.AutoSize = true;
+            this.radioOrdered.ForeColor = System.Drawing.Color.Gainsboro;
+            this.radioOrdered.Location = new System.Drawing.Point(6, 12);
+            this.radioOrdered.Name = "radioOrdered";
+            this.radioOrdered.Size = new System.Drawing.Size(82, 21);
+            this.radioOrdered.TabIndex = 8;
+            this.radioOrdered.TabStop = true;
+            this.radioOrdered.Text = "Ordered";
+            this.radioOrdered.UseVisualStyleBackColor = true;
+            // 
+            // radioAvailable
+            // 
+            this.radioAvailable.AutoSize = true;
+            this.radioAvailable.ForeColor = System.Drawing.Color.Gainsboro;
+            this.radioAvailable.Location = new System.Drawing.Point(119, 12);
+            this.radioAvailable.Name = "radioAvailable";
+            this.radioAvailable.Size = new System.Drawing.Size(86, 21);
+            this.radioAvailable.TabIndex = 9;
+            this.radioAvailable.TabStop = true;
+            this.radioAvailable.Text = "Available";
+            this.radioAvailable.UseVisualStyleBackColor = true;
+            // 
             // A_EditRoomData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(932, 553);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtPricePerWeek);
@@ -274,8 +314,9 @@
             this.Text = "FormEditRoomData";
             this.Load += new System.EventHandler(this.A_EditRoomData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,19 +337,24 @@
         private System.Windows.Forms.TextBox txtImgSource;
         private System.Windows.Forms.TextBox txtPricePerWeek;
         private System.Windows.Forms.DataGridView dataGridView1;
+   
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.BindingSource roomsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomImageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pricePerWeekDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label9;
-        private RoomsDataSet roomsDataSet;
-        private System.Windows.Forms.BindingSource roomsBindingSource;
-        private RoomsDataSetTableAdapters.RoomsTableAdapter roomsTableAdapter;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isAvailableDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioOrdered;
+        private System.Windows.Forms.RadioButton radioAvailable;
     }
 }

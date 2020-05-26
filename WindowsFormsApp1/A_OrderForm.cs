@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using WindowsFormsApp1.Domain;
 using WindowsFormsApp1.Model;
 
@@ -29,6 +30,7 @@ namespace WindowsFormsApp1
         }
         private void A_OrderForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'roomsDataSet.Rooms' table. You can move, or remove it, as needed.
             dateDepartureDate.MinDate = DateTime.Today.AddDays(-1);
             dateDepartureDate.MaxDate = DateTime.Today.AddMonths(13);
             dateEntryDate.MinDate = DateTime.Today.AddDays(-1);
@@ -67,6 +69,7 @@ namespace WindowsFormsApp1
 
                 Order order = new Order();
                 var daysCount = dateDepartureDate.Value - dateEntryDate.Value;
+                //change this "300" to price from room data "price"
                 price = 300;
                 price = price * daysCount.Days / 7;
                 order.ClientName = txtName.Text;

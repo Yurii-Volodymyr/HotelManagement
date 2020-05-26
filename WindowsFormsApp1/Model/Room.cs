@@ -16,5 +16,6 @@ namespace WindowsFormsApp1.Model
         public string Description{ get; set; }
         public string RoomImage { get; set; }
         public double PricePerWeek{ get; set; }
+        public string IsAvailable { get; set; }
     }
 }

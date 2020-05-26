@@ -32,5 +32,17 @@ namespace WindowsFormsApp1.Properties {
                 return ((string)(this["HotelManagerDBConnectionStringETETET"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ColumnHeader")]
+        public string nnn {
+            get {
+                return ((string)(this["nnn"]));
+            }
+            set {
+                this["nnn"] = value;
+            }
+        }
     }
 }

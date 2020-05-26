@@ -92,15 +92,6 @@
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\TestData.cs" />
-    <Compile Include="Migrations\202004261703188_as.cs" />
-    <Compile Include="Migrations\202004261703188_as.designer.cs">
-      <DependentUpon>202004261703188_as.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004261832397_kkk.cs" />
-    <Compile Include="Migrations\202004261832397_kkk.designer.cs">
-      <DependentUpon>202004261832397_kkk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Room.cs" />
@@ -111,10 +102,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderClientDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="RoomsDataSet.Designer.cs">
+    <Compile Include="RoomsHotelDbContextDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+      <DependentUpon>RoomsHotelDbContextDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ServiceFood.cs">
       <SubType>Form</SubType>
@@ -175,12 +166,6 @@
     <EmbeddedResource Include="A_EditOrderAndClient.resx">
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004261703188_as.resx">
-      <DependentUpon>202004261703188_as.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004261832397_kkk.resx">
-      <DependentUpon>202004261832397_kkk.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ServiceFood.resx">
       <DependentUpon>ServiceFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,16 +221,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="RoomsDataSet.xsc">
-      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+    <None Include="RoomsHotelDbContextDataSet.xsc">
+      <DependentUpon>RoomsHotelDbContextDataSet.xsd</DependentUpon>
     </None>
-    <None Include="RoomsDataSet.xsd">
+    <None Include="RoomsHotelDbContextDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RoomsDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>RoomsHotelDbContextDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="RoomsDataSet.xss">
-      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+    <None Include="RoomsHotelDbContextDataSet.xss">
+      <DependentUpon>RoomsHotelDbContextDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

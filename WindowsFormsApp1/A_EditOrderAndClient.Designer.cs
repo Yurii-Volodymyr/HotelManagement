@@ -47,32 +47,32 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateEntryDate = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderClientDataSet = new WindowsFormsApp1.OrderClientDataSet();
             this.txtTotalCost = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtRoomNum = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.radioFemale = new System.Windows.Forms.RadioButton();
             this.radioMale = new System.Windows.Forms.RadioButton();
-            this.ordersTableAdapter = new WindowsFormsApp1.OrderClientDataSetTableAdapters.OrdersTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderClientDataSet)).BeginInit();
+            this.ordersDataSet = new WindowsFormsApp1.OrdersDataSet();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ordersTableAdapter = new WindowsFormsApp1.OrdersDataSetTableAdapters.OrdersTableAdapter();
+            this.txtRoomNumber = new System.Windows.Forms.TextBox();
+            this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.entryDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalCostingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -104,7 +104,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(253, 117);
+            this.txtEmail.Location = new System.Drawing.Point(253, 119);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(156, 22);
             this.txtEmail.TabIndex = 8;
@@ -141,7 +141,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(39, 99);
+            this.label1.Location = new System.Drawing.Point(39, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 17);
             this.label1.TabIndex = 53;
@@ -241,16 +241,6 @@
             this.label9.TabIndex = 65;
             this.label9.Text = "HOTEL ROYAL";
             // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.orderClientDataSet;
-            // 
-            // orderClientDataSet
-            // 
-            this.orderClientDataSet.DataSetName = "OrderClientDataSet";
-            this.orderClientDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // txtTotalCost
             // 
             this.txtTotalCost.Location = new System.Drawing.Point(858, 179);
@@ -267,13 +257,6 @@
             this.label10.Size = new System.Drawing.Size(89, 17);
             this.label10.TabIndex = 69;
             this.label10.Text = "Total costing";
-            // 
-            // txtRoomNum
-            // 
-            this.txtRoomNum.Location = new System.Drawing.Point(858, 117);
-            this.txtRoomNum.Name = "txtRoomNum";
-            this.txtRoomNum.Size = new System.Drawing.Size(156, 22);
-            this.txtRoomNum.TabIndex = 13;
             // 
             // label11
             // 
@@ -309,10 +292,6 @@
             this.radioMale.Text = "Male";
             this.radioMale.UseVisualStyleBackColor = true;
             // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioMale);
@@ -325,96 +304,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gender";
             // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "TotalCosting";
-            this.dataGridViewTextBoxColumn9.HeaderText = "TotalCosting";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // roomNumberDataGridViewTextBoxColumn
-            // 
-            this.roomNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.roomNumberDataGridViewTextBoxColumn.DataPropertyName = "RoomNumber";
-            this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
-            this.roomNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "DepartureDate";
-            this.dataGridViewTextBoxColumn8.HeaderText = "DepartureDate";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "EntryDate";
-            this.dataGridViewTextBoxColumn7.HeaderText = "EntryDate";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Passport";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Passport";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Gender";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Gender";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Phone";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Phone";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "BirthDay";
-            this.dataGridViewTextBoxColumn2.HeaderText = "BirthDay";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // clientNameDataGridViewTextBoxColumn
-            // 
-            this.clientNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "ClientName";
-            this.clientNameDataGridViewTextBoxColumn.HeaderText = "ClientName";
-            this.clientNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "OrderId";
-            this.dataGridViewTextBoxColumn1.HeaderText = "OrderId";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -422,25 +311,136 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.orderIdDataGridViewTextBoxColumn,
             this.clientNameDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
+            this.birthDayDataGridViewTextBoxColumn,
+            this.emailDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
+            this.genderDataGridViewTextBoxColumn,
+            this.passportDataGridViewTextBoxColumn,
+            this.entryDateDataGridViewTextBoxColumn,
+            this.departureDateDataGridViewTextBoxColumn,
             this.roomNumberDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn9});
+            this.totalCostingDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ordersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 282);
+            this.dataGridView1.Location = new System.Drawing.Point(42, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1162, 383);
-            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.Size = new System.Drawing.Size(1101, 405);
+            this.dataGridView1.TabIndex = 72;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // ordersDataSet
+            // 
+            this.ordersDataSet.DataSetName = "OrdersDataSet";
+            this.ordersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataMember = "Orders";
+            this.ordersBindingSource.DataSource = this.ordersDataSet;
+            // 
+            // ordersTableAdapter
+            // 
+            this.ordersTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtRoomNumber
+            // 
+            this.txtRoomNumber.Location = new System.Drawing.Point(858, 117);
+            this.txtRoomNumber.Name = "txtRoomNumber";
+            this.txtRoomNumber.Size = new System.Drawing.Size(156, 22);
+            this.txtRoomNumber.TabIndex = 73;
+            // 
+            // orderIdDataGridViewTextBoxColumn
+            // 
+            this.orderIdDataGridViewTextBoxColumn.DataPropertyName = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.HeaderText = "OrderId";
+            this.orderIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
+            this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.orderIdDataGridViewTextBoxColumn.Visible = false;
+            this.orderIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // clientNameDataGridViewTextBoxColumn
+            // 
+            this.clientNameDataGridViewTextBoxColumn.DataPropertyName = "ClientName";
+            this.clientNameDataGridViewTextBoxColumn.HeaderText = "ClientName";
+            this.clientNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clientNameDataGridViewTextBoxColumn.Name = "clientNameDataGridViewTextBoxColumn";
+            this.clientNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // birthDayDataGridViewTextBoxColumn
+            // 
+            this.birthDayDataGridViewTextBoxColumn.DataPropertyName = "BirthDay";
+            this.birthDayDataGridViewTextBoxColumn.HeaderText = "BirthDay";
+            this.birthDayDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.birthDayDataGridViewTextBoxColumn.Name = "birthDayDataGridViewTextBoxColumn";
+            this.birthDayDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passportDataGridViewTextBoxColumn
+            // 
+            this.passportDataGridViewTextBoxColumn.DataPropertyName = "Passport";
+            this.passportDataGridViewTextBoxColumn.HeaderText = "Passport";
+            this.passportDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passportDataGridViewTextBoxColumn.Name = "passportDataGridViewTextBoxColumn";
+            this.passportDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // entryDateDataGridViewTextBoxColumn
+            // 
+            this.entryDateDataGridViewTextBoxColumn.DataPropertyName = "EntryDate";
+            this.entryDateDataGridViewTextBoxColumn.HeaderText = "EntryDate";
+            this.entryDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.entryDateDataGridViewTextBoxColumn.Name = "entryDateDataGridViewTextBoxColumn";
+            this.entryDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // departureDateDataGridViewTextBoxColumn
+            // 
+            this.departureDateDataGridViewTextBoxColumn.DataPropertyName = "DepartureDate";
+            this.departureDateDataGridViewTextBoxColumn.HeaderText = "DepartureDate";
+            this.departureDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.departureDateDataGridViewTextBoxColumn.Name = "departureDateDataGridViewTextBoxColumn";
+            this.departureDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // roomNumberDataGridViewTextBoxColumn
+            // 
+            this.roomNumberDataGridViewTextBoxColumn.DataPropertyName = "RoomNumber";
+            this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
+            this.roomNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
+            this.roomNumberDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // totalCostingDataGridViewTextBoxColumn
+            // 
+            this.totalCostingDataGridViewTextBoxColumn.DataPropertyName = "TotalCosting";
+            this.totalCostingDataGridViewTextBoxColumn.HeaderText = "TotalCosting";
+            this.totalCostingDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.totalCostingDataGridViewTextBoxColumn.Name = "totalCostingDataGridViewTextBoxColumn";
+            this.totalCostingDataGridViewTextBoxColumn.Width = 125;
             // 
             // A_EditOrderAndClient
             // 
@@ -448,12 +448,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1186, 704);
+            this.Controls.Add(this.txtRoomNumber);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtTotalCost);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtRoomNum);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtPassport);
@@ -475,11 +475,11 @@
             this.Name = "A_EditOrderAndClient";
             this.Text = "EditOrderAndClient";
             this.Load += new System.EventHandler(this.A_EditOrderAndClient_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderClientDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,8 +505,19 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateEntryDate;
         private System.Windows.Forms.Label label9;
+
+        private System.Windows.Forms.TextBox txtTotalCost;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RadioButton radioFemale;
+        private System.Windows.Forms.RadioButton radioMale;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private OrdersDataSet ordersDataSet;
+        private System.Windows.Forms.BindingSource ordersBindingSource;
+        private OrdersDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDayDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
@@ -514,28 +525,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn passportDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn entryDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtTotalCost;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtRoomNum;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.RadioButton radioFemale;
-        private System.Windows.Forms.RadioButton radioMale;
-        private OrderClientDataSet orderClientDataSet;
-        private System.Windows.Forms.BindingSource ordersBindingSource;
-        private OrderClientDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalCostingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox txtRoomNumber;
     }
 }

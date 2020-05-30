@@ -31,7 +31,6 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.button2 = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.dateBDay = new System.Windows.Forms.DateTimePicker();
@@ -39,7 +38,6 @@ namespace WindowsFormsApp1
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,21 +46,19 @@ namespace WindowsFormsApp1
             this.label6 = new System.Windows.Forms.Label();
             this.txtPassport = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.radioFemale = new System.Windows.Forms.RadioButton();
-            this.radioMale = new System.Windows.Forms.RadioButton();
             this.dateEntryDate = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.roomsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtRoomNumber = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
+            this.cbRoomNumber = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioMale = new System.Windows.Forms.RadioButton();
+            this.radioFemale = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(322, 322);
+            this.button2.Location = new System.Drawing.Point(300, 314);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 33);
             this.button2.TabIndex = 48;
@@ -126,16 +122,6 @@ namespace WindowsFormsApp1
             this.label2.TabIndex = 36;
             this.label2.Text = "Birthday";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(55, 292);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 17);
-            this.label5.TabIndex = 40;
-            this.label5.Text = "Gender";
-            // 
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(58, 260);
@@ -155,7 +141,7 @@ namespace WindowsFormsApp1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(419, 322);
+            this.button1.Location = new System.Drawing.Point(419, 314);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(81, 33);
             this.button1.TabIndex = 46;
@@ -211,30 +197,6 @@ namespace WindowsFormsApp1
             this.label8.TabIndex = 46;
             this.label8.Text = "Passoprt";
             // 
-            // radioFemale
-            // 
-            this.radioFemale.AutoSize = true;
-            this.radioFemale.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioFemale.Location = new System.Drawing.Point(139, 322);
-            this.radioFemale.Name = "radioFemale";
-            this.radioFemale.Size = new System.Drawing.Size(75, 21);
-            this.radioFemale.TabIndex = 39;
-            this.radioFemale.TabStop = true;
-            this.radioFemale.Text = "Female";
-            this.radioFemale.UseVisualStyleBackColor = true;
-            // 
-            // radioMale
-            // 
-            this.radioMale.AutoSize = true;
-            this.radioMale.ForeColor = System.Drawing.Color.Gainsboro;
-            this.radioMale.Location = new System.Drawing.Point(60, 322);
-            this.radioMale.Name = "radioMale";
-            this.radioMale.Size = new System.Drawing.Size(59, 21);
-            this.radioMale.TabIndex = 38;
-            this.radioMale.TabStop = true;
-            this.radioMale.Text = "Male";
-            this.radioMale.UseVisualStyleBackColor = true;
-            // 
             // dateEntryDate
             // 
             this.dateEntryDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -256,36 +218,61 @@ namespace WindowsFormsApp1
             this.label9.TabIndex = 48;
             this.label9.Text = "Room Number";
             // 
-            // roomsDataSet
+            // cbRoomNumber
             // 
-             this.roomsDataSetBindingSource.Position = 0;
+            this.cbRoomNumber.DisplayMember = "RoomNumber";
+            this.cbRoomNumber.FormattingEnabled = true;
+            this.cbRoomNumber.Location = new System.Drawing.Point(300, 209);
+            this.cbRoomNumber.Name = "cbRoomNumber";
+            this.cbRoomNumber.Size = new System.Drawing.Size(200, 24);
+            this.cbRoomNumber.TabIndex = 49;
+            this.cbRoomNumber.ValueMember = "RoomId";
             // 
-            // roomsBindingSource
+            // groupBox1
             // 
-            this.roomsBindingSource.DataMember = "Rooms";
-            this.roomsBindingSource.DataSource = this.roomsDataSetBindingSource;
+            this.groupBox1.Controls.Add(this.radioMale);
+            this.groupBox1.Controls.Add(this.radioFemale);
+            this.groupBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox1.Location = new System.Drawing.Point(58, 299);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(156, 47);
+            this.groupBox1.TabIndex = 72;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gender";
             // 
-            // roomsTableAdapter
+            // radioMale
             // 
+            this.radioMale.AutoSize = true;
+            this.radioMale.ForeColor = System.Drawing.Color.Gainsboro;
+            this.radioMale.Location = new System.Drawing.Point(2, 21);
+            this.radioMale.Name = "radioMale";
+            this.radioMale.Size = new System.Drawing.Size(59, 21);
+            this.radioMale.TabIndex = 8;
+            this.radioMale.TabStop = true;
+            this.radioMale.Text = "Male";
+            this.radioMale.UseVisualStyleBackColor = true;
             // 
-            // txtRoomNumber
+            // radioFemale
             // 
-            this.txtRoomNumber.Location = new System.Drawing.Point(300, 209);
-            this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(200, 22);
-            this.txtRoomNumber.TabIndex = 44;
+            this.radioFemale.AutoSize = true;
+            this.radioFemale.ForeColor = System.Drawing.Color.Gainsboro;
+            this.radioFemale.Location = new System.Drawing.Point(75, 21);
+            this.radioFemale.Name = "radioFemale";
+            this.radioFemale.Size = new System.Drawing.Size(75, 21);
+            this.radioFemale.TabIndex = 9;
+            this.radioFemale.TabStop = true;
+            this.radioFemale.Text = "Female";
+            this.radioFemale.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // label5
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.roomsBindingSource, "RoomId", true));
-            this.comboBox1.DataSource = this.roomsBindingSource;
-            this.comboBox1.DisplayMember = "RoomNumber";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(300, 258);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 49;
-            this.comboBox1.ValueMember = "RoomId";
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label5.Location = new System.Drawing.Point(55, 299);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 17);
+            this.label5.TabIndex = 71;
+            this.label5.Text = "Gender";
             // 
             // A_OrderForm
             // 
@@ -293,12 +280,11 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(531, 420);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txtRoomNumber);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbRoomNumber);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.radioMale);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.radioFemale);
             this.Controls.Add(this.txtPassport);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtEmail);
@@ -307,7 +293,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -319,8 +304,8 @@ namespace WindowsFormsApp1
             this.Name = "A_OrderForm";
             this.Text = "OrderForm";
             this.Load += new System.EventHandler(this.A_OrderForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.roomsDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,7 +320,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
@@ -344,13 +328,12 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtPassport;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton radioFemale;
-        private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.DateTimePicker dateEntryDate;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.BindingSource roomsDataSetBindingSource;
-        private System.Windows.Forms.BindingSource roomsBindingSource;
-        private System.Windows.Forms.TextBox txtRoomNumber;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbRoomNumber;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioMale;
+        private System.Windows.Forms.RadioButton radioFemale;
+        private System.Windows.Forms.Label label5;
     }
 }

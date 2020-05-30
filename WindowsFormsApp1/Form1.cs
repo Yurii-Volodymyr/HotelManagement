@@ -161,8 +161,10 @@ namespace WindowsFormsApp1
 
         private void label1_Click(object sender, EventArgs e)
         {
-            //currentChildForm.Close();
-
+            if (activeForm != null)
+            {
+                activeForm.Hide();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -171,5 +173,6 @@ namespace WindowsFormsApp1
             login.Show();
             this.Close();
         }
+       
     }
 }

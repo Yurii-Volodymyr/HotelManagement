@@ -92,20 +92,37 @@
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\TestData.cs" />
+    <Compile Include="RoomsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005291909530_adws.cs" />
+    <Compile Include="Migrations\202005291909530_adws.designer.cs">
+      <DependentUpon>202005291909530_adws.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005292233082_ss.cs" />
+    <Compile Include="Migrations\202005292233082_ss.designer.cs">
+      <DependentUpon>202005292233082_ss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005301603433_ss2.cs" />
+    <Compile Include="Migrations\202005301603433_ss2.designer.cs">
+      <DependentUpon>202005301603433_ss2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005301726577_ss3.cs" />
+    <Compile Include="Migrations\202005301726577_ss3.designer.cs">
+      <DependentUpon>202005301726577_ss3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserRoles.cs" />
-    <Compile Include="OrderClientDataSet.Designer.cs">
+    <Compile Include="OrdersDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OrderClientDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="RoomsHotelDbContextDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RoomsHotelDbContextDataSet.xsd</DependentUpon>
+      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ServiceFood.cs">
       <SubType>Form</SubType>
@@ -166,6 +183,18 @@
     <EmbeddedResource Include="A_EditOrderAndClient.resx">
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005291909530_adws.resx">
+      <DependentUpon>202005291909530_adws.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005292233082_ss.resx">
+      <DependentUpon>202005292233082_ss.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005301603433_ss2.resx">
+      <DependentUpon>202005301603433_ss2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005301726577_ss3.resx">
+      <DependentUpon>202005301726577_ss3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ServiceFood.resx">
       <DependentUpon>ServiceFood.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,16 +229,28 @@
     <EmbeddedResource Include="RoomList.resx">
       <DependentUpon>RoomList.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="OrderClientDataSet.xsc">
-      <DependentUpon>OrderClientDataSet.xsd</DependentUpon>
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Room.datasource" />
+    <None Include="RoomsDataSet.xsc">
+      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
     </None>
-    <None Include="OrderClientDataSet.xsd">
+    <None Include="RoomsDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OrderClientDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>RoomsDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="OrderClientDataSet.xss">
-      <DependentUpon>OrderClientDataSet.xsd</DependentUpon>
+    <None Include="RoomsDataSet.xss">
+      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OrdersDataSet.xsc">
+      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OrdersDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OrdersDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OrdersDataSet.xss">
+      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -221,17 +262,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="RoomsHotelDbContextDataSet.xsc">
-      <DependentUpon>RoomsHotelDbContextDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="RoomsHotelDbContextDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RoomsHotelDbContextDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RoomsHotelDbContextDataSet.xss">
-      <DependentUpon>RoomsHotelDbContextDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -34,14 +34,13 @@ namespace WindowsFormsApp1
 
         private void A_EditOrderAndClient_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'orderClientDataSet.Orders' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter.Fill(this.orderClientDataSet.Orders);
-            // TODO: This line of code loads data into the 'hotelManagerDBDataSet1.Orders' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'ordersDataSet.Orders' table. You can move, or remove it, as needed.
+            this.ordersTableAdapter.Fill(this.ordersDataSet.Orders);
 
         }
         int indexRow;
         /// <summary>
-        /// updating data
+        /// updating order and client data
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">selected row</param>
@@ -71,14 +70,14 @@ namespace WindowsFormsApp1
                     order.Passport = txtPassport.Text;
                     order.EntryDate = dateEntryDate.Value;
                     order.DepartureDate = dateDepartureDate.Value;
-                    order.RoomNumber = txtRoomNum.Text;
+                    order.RoomNumber = txtRoomNumber.Text;
                     order.TotalCosting = Convert.ToDouble(txtTotalCost.Text);
                     db.Orders.AddOrUpdate(order);
 
                     int result = db.SaveChanges();
                     if (result > 0)
                     {
-                        this.ordersTableAdapter.Fill(this.orderClientDataSet.Orders);
+                        this.ordersTableAdapter.Fill(this.ordersDataSet.Orders);
 
                         MessageBox.Show("Order updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -103,10 +102,10 @@ namespace WindowsFormsApp1
                 DataGridViewRow row = dataGridView1.Rows[indexRow];
 
                 txtName.Text = row.Cells[clientNameDataGridViewTextBoxColumn.Index].Value.ToString();
-                dataBDay.Value = Convert.ToDateTime(row.Cells[dataGridViewTextBoxColumn2.Index].Value);
-                txtEmail.Text = row.Cells[dataGridViewTextBoxColumn3.Index].Value.ToString();
-                txtPhone.Text = row.Cells[dataGridViewTextBoxColumn4.Index].Value.ToString();
-                if (row.Cells[dataGridViewTextBoxColumn5.Index].Value.ToString().ToLower() == "male")
+                dataBDay.Value = Convert.ToDateTime(row.Cells[birthDayDataGridViewTextBoxColumn.Index].Value);
+                txtEmail.Text = row.Cells[emailDataGridViewTextBoxColumn.Index].Value.ToString();
+                txtPhone.Text = row.Cells[phoneDataGridViewTextBoxColumn.Index].Value.ToString();
+                if (row.Cells[genderDataGridViewTextBoxColumn.Index].Value.ToString().ToLower() == "male")
                 {
                     radioMale.Checked = true;
                 }
@@ -114,12 +113,14 @@ namespace WindowsFormsApp1
                 {
                     radioFemale.Checked = true;
                 }
-                txtPassport.Text = row.Cells[dataGridViewTextBoxColumn6.Index].Value.ToString();
-                dateEntryDate.Value = Convert.ToDateTime(row.Cells[dataGridViewTextBoxColumn7.Index].Value);
-                dateDepartureDate.Value = Convert.ToDateTime(row.Cells[dataGridViewTextBoxColumn8.Index].Value);
-                txtRoomNum.Text = row.Cells[roomNumberDataGridViewTextBoxColumn.Index].Value.ToString();
-                txtTotalCost.Text = row.Cells[dataGridViewTextBoxColumn9.Index].Value.ToString();
+                txtPassport.Text = row.Cells[passportDataGridViewTextBoxColumn.Index].Value.ToString();
+                dateEntryDate.Value = Convert.ToDateTime(row.Cells[entryDateDataGridViewTextBoxColumn.Index].Value);
+                dateDepartureDate.Value = Convert.ToDateTime(row.Cells[departureDateDataGridViewTextBoxColumn.Index].Value);
+                txtRoomNumber.Text = row.Cells[roomNumberDataGridViewTextBoxColumn.Index].Value.ToString();
+                txtTotalCost.Text = row.Cells[totalCostingDataGridViewTextBoxColumn.Index].Value.ToString();
             }
         }
+
+
     }
 }

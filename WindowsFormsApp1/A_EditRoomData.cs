@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity.Migrations;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,10 +17,14 @@ namespace WindowsFormsApp1
     public partial class A_EditRoomData : Form
     {
         int indexRow;
-
+        //HotelWinFormsDbContext db;
         public A_EditRoomData()
         {
             InitializeComponent();
+            foreach (var item in Enum.GetValues(typeof(RoomTypes)))
+            {
+                cbRoomType.Items.Add(item);
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -34,29 +39,47 @@ namespace WindowsFormsApp1
         {
             using (var db = new HotelWinFormsDbContext())
             {
-                Room room = new Room();
-                room.Description = richTextBox1.Text;
-                room.PricePerWeek = Convert.ToDouble(txtPricePerWeek.Text);
-                room.RoomImage = (txtImgSource.Text);
-
-                if (db.Rooms.Any(x => x.RoomNumber.Replace(" ", string.Empty).ToUpper() != txtRoomNumb.Text.Replace(" ", string.Empty).ToUpper()))
+                try
                 {
-                    room.RoomNumber = (txtRoomNumb.Text.Replace(" ", string.Empty).ToUpper());
-                    db.Rooms.Add(room);
-                    int result = db.SaveChanges();
-                    // this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
-                    if (result > 0)
+                    Room room = new Room();
+                    room.Description = richTextBox1.Text;
+                    room.PricePerWeek = Convert.ToDouble(txtPricePerWeek.Text);
+                    room.RoomImage = (txtImgSource.Text);
+                    if (radioAvailable.Checked == true)
                     {
-                        MessageBox.Show("Room created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        room.IsAvailable = "Available";
+                    }
+                    if (radioOrdered.Checked == true)
+                    {
+                        room.IsAvailable = "Ordered";
+                    }
+
+                    room.RoomType = cbRoomType.Text;
+
+
+                    if (db.Rooms.All(x => x.RoomNumber != txtRoomNumb.Text.Replace(" ", string.Empty).ToUpper()))
+                    {
+                        room.RoomNumber = (txtRoomNumb.Text.Replace(" ", string.Empty).ToUpper());
+                        db.Rooms.Add(room);
+                        int result = db.SaveChanges();
+                        if (result > 0)
+                        {
+                            this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
+                            MessageBox.Show("Room created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed");
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Failed");
+                        MessageBox.Show("Room with same number already exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Room with same number already exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Fields can`t be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
 
@@ -66,7 +89,10 @@ namespace WindowsFormsApp1
 
         private void A_EditRoomData_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'roomsHotelDbContextDataSet.Rooms' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'hotelDbContextDataSet.Rooms' table. You can move, or remove it, as needed.
+            this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
+            // TODO: This line of code loads data into the 'roomsDataSet.Rooms' table. You can move, or remove it, as needed.
+
 
 
         }
@@ -84,6 +110,7 @@ namespace WindowsFormsApp1
 
                 if (result > 0)
                 {
+                    this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
                     MessageBox.Show("Room deleted", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -107,12 +134,21 @@ namespace WindowsFormsApp1
                     room.PricePerWeek = Convert.ToDouble(txtPricePerWeek.Text);
                     room.RoomImage = txtImgSource.Text;
                     room.RoomNumber = txtRoomNumb.Text;
-
+                    if (radioAvailable.Checked == true)
+                    {
+                        room.IsAvailable = "Available";
+                    }
+                    if (radioOrdered.Checked == true)
+                    {
+                        room.IsAvailable = "Ordered";
+                    }
+                    room.RoomType = cbRoomType.Text;
                     db.Rooms.AddOrUpdate(room);
                     int result = db.SaveChanges();
 
                     if (result > 0)
                     {
+                        this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
                         MessageBox.Show("Room updated", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -125,7 +161,9 @@ namespace WindowsFormsApp1
         }
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
             if (indexRow <= dataGridView1.Rows.Count && indexRow >= 0)
@@ -133,11 +171,37 @@ namespace WindowsFormsApp1
 
                 DataGridViewRow row = dataGridView1.Rows[indexRow];
 
-                txtRoomNumb.Text = row.Cells[dataGridViewTextBoxColumn2.Index].Value.ToString();
-                richTextBox1.Text = (row.Cells[dataGridViewTextBoxColumn3.Index].Value).ToString();
-                txtImgSource.Text = row.Cells[dataGridViewTextBoxColumn4.Index].Value.ToString();
-                txtPricePerWeek.Text = row.Cells[dataGridViewTextBoxColumn5.Index].Value.ToString();
+                txtRoomNumb.Text = row.Cells[roomNumberDataGridViewTextBoxColumn.Index].Value.ToString();
+                richTextBox1.Text = (row.Cells[descriptionDataGridViewTextBoxColumn.Index].Value).ToString();
+                txtImgSource.Text = row.Cells[roomImageDataGridViewTextBoxColumn.Index].Value.ToString();
+                txtPricePerWeek.Text = row.Cells[pricePerWeekDataGridViewTextBoxColumn.Index].Value.ToString();
+                if (row.Cells[isAvailableDataGridViewTextBoxColumn.Index].Value.ToString() == "Available")
+                {
+                    radioAvailable.Checked = true;
+                }
+                if (row.Cells[isAvailableDataGridViewTextBoxColumn.Index].Value.ToString() == "Ordered")
+                {
+                    radioOrdered.Checked = true;
 
+                }
+                cbRoomType.SelectedItem = row.Cells[roomTypeDataGridViewTextBoxColumn.Index].Value.ToString();
+
+            }
+        }
+
+        private void txtImgSource_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var dialog = new OpenFileDialog()
+            {
+                Title = "Browse Img File",
+                Multiselect = false,
+            };
+            using (dialog)
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtImgSource.Text = dialog.FileName;
+                }
             }
         }
     }

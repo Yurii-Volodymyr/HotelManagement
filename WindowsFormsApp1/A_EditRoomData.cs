@@ -41,30 +41,32 @@ namespace WindowsFormsApp1
             {
                 try
                 {
-                    Room room = new Room();
-                    room.Description = richTextBox1.Text;
-                    room.PricePerWeek = Convert.ToDouble(txtPricePerWeek.Text);
-                    room.RoomImage = (txtImgSource.Text);
-                    if (radioAvailable.Checked == true)
-                    {
-                        room.IsAvailable = "Available";
-                    }
-                    if (radioOrdered.Checked == true)
-                    {
-                        room.IsAvailable = "Ordered";
-                    }
-
-                    room.RoomType = cbRoomType.Text;
-
-
                     if (db.Rooms.All(x => x.RoomNumber != txtRoomNumb.Text.Replace(" ", string.Empty).ToUpper()))
                     {
+                        Room room = new Room();
+
+                        room.Description = richTextBox1.Text;
+                        room.PricePerWeek = Convert.ToDouble(txtPricePerWeek.Text);
+                        room.RoomImage = (txtImgSource.Text);
+                        if (radioAvailable.Checked == true)
+                        {
+                            room.IsAvailable = "Available";
+                        }
+                        if (radioOrdered.Checked == true)
+                        {
+                            room.IsAvailable = "Ordered";
+                        }
+
+                        room.RoomType = cbRoomType.Text;
                         room.RoomNumber = (txtRoomNumb.Text.Replace(" ", string.Empty).ToUpper());
                         db.Rooms.Add(room);
                         int result = db.SaveChanges();
                         if (result > 0)
                         {
-                            this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
+                            dataGridView1.Update();
+                            dataGridView1.Refresh();
+
+                            //this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
                             MessageBox.Show("Room created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
@@ -80,7 +82,6 @@ namespace WindowsFormsApp1
                 catch (Exception ex)
                 {
                     MessageBox.Show("Fields can`t be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 }
 
 
@@ -89,12 +90,10 @@ namespace WindowsFormsApp1
 
         private void A_EditRoomData_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'hotelDbContextDataSet.Rooms' table. You can move, or remove it, as needed.
-            this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
-            // TODO: This line of code loads data into the 'roomsDataSet.Rooms' table. You can move, or remove it, as needed.
-
-
-
+            using (var db = new HotelWinFormsDbContext())
+            {
+                roomBindingSource.DataSource = db.Rooms.ToList();
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -110,7 +109,8 @@ namespace WindowsFormsApp1
 
                 if (result > 0)
                 {
-                    this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
+                    dataGridView1.Update();
+                    dataGridView1.Refresh();                    //this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
                     MessageBox.Show("Room deleted", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -148,7 +148,9 @@ namespace WindowsFormsApp1
 
                     if (result > 0)
                     {
-                        this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
+                        //dataGridView1.Update();
+                        //dataGridView1.Refresh();
+                        roomBindingSource.DataSource = db.Rooms.ToList();
                         MessageBox.Show("Room updated", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -159,10 +161,6 @@ namespace WindowsFormsApp1
 
             }
         }
-
-
-
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexRow = e.RowIndex;
@@ -171,20 +169,22 @@ namespace WindowsFormsApp1
 
                 DataGridViewRow row = dataGridView1.Rows[indexRow];
 
+
                 txtRoomNumb.Text = row.Cells[roomNumberDataGridViewTextBoxColumn.Index].Value.ToString();
                 richTextBox1.Text = (row.Cells[descriptionDataGridViewTextBoxColumn.Index].Value).ToString();
                 txtImgSource.Text = row.Cells[roomImageDataGridViewTextBoxColumn.Index].Value.ToString();
                 txtPricePerWeek.Text = row.Cells[pricePerWeekDataGridViewTextBoxColumn.Index].Value.ToString();
-                if (row.Cells[isAvailableDataGridViewTextBoxColumn.Index].Value.ToString() == "Available")
+                if (row.Cells[isAvailableDataGridViewTextBoxColumn.Index].Value != null && row.Cells[isAvailableDataGridViewTextBoxColumn.Index].Value.ToString() == "Available")
                 {
                     radioAvailable.Checked = true;
                 }
-                if (row.Cells[isAvailableDataGridViewTextBoxColumn.Index].Value.ToString() == "Ordered")
+                if (row.Cells[isAvailableDataGridViewTextBoxColumn.Index].Value != null && row.Cells[isAvailableDataGridViewTextBoxColumn.Index].Value.ToString() == "Ordered")
                 {
                     radioOrdered.Checked = true;
 
                 }
                 cbRoomType.SelectedItem = row.Cells[roomTypeDataGridViewTextBoxColumn.Index].Value.ToString();
+
 
             }
         }

@@ -54,10 +54,8 @@
             this.radioMale = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ordersDataSet = new WindowsFormsApp1.OrdersDataSet();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ordersTableAdapter = new WindowsFormsApp1.OrdersDataSetTableAdapters.OrdersTableAdapter();
             this.txtRoomNumber = new System.Windows.Forms.TextBox();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,8 +69,7 @@
             this.totalCostingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -322,7 +319,7 @@
             this.departureDateDataGridViewTextBoxColumn,
             this.roomNumberDataGridViewTextBoxColumn,
             this.totalCostingDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.ordersBindingSource;
+            this.dataGridView1.DataSource = this.orderBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(42, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -331,26 +328,16 @@
             this.dataGridView1.TabIndex = 72;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // ordersDataSet
-            // 
-            this.ordersDataSet.DataSetName = "OrdersDataSet";
-            this.ordersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataMember = "Orders";
-            this.ordersBindingSource.DataSource = this.ordersDataSet;
-            // 
-            // ordersTableAdapter
-            // 
-            this.ordersTableAdapter.ClearBeforeFill = true;
-            // 
             // txtRoomNumber
             // 
-            this.txtRoomNumber.Location = new System.Drawing.Point(858, 117);
+            this.txtRoomNumber.Location = new System.Drawing.Point(858, 119);
             this.txtRoomNumber.Name = "txtRoomNumber";
             this.txtRoomNumber.Size = new System.Drawing.Size(156, 22);
             this.txtRoomNumber.TabIndex = 73;
+            // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(WindowsFormsApp1.Model.Order);
             // 
             // orderIdDataGridViewTextBoxColumn
             // 
@@ -358,7 +345,6 @@
             this.orderIdDataGridViewTextBoxColumn.HeaderText = "OrderId";
             this.orderIdDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.orderIdDataGridViewTextBoxColumn.Name = "orderIdDataGridViewTextBoxColumn";
-            this.orderIdDataGridViewTextBoxColumn.ReadOnly = true;
             this.orderIdDataGridViewTextBoxColumn.Visible = false;
             this.orderIdDataGridViewTextBoxColumn.Width = 125;
             // 
@@ -478,8 +464,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,9 +498,7 @@
         private System.Windows.Forms.RadioButton radioMale;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private OrdersDataSet ordersDataSet;
-        private System.Windows.Forms.BindingSource ordersBindingSource;
-        private OrdersDataSetTableAdapters.OrdersTableAdapter ordersTableAdapter;
+        private System.Windows.Forms.TextBox txtRoomNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn birthDayDataGridViewTextBoxColumn;
@@ -527,6 +510,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn departureDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalCostingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox txtRoomNumber;
+        private System.Windows.Forms.BindingSource orderBindingSource;
     }
 }

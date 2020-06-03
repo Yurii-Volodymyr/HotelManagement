@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace WindowsFormsApp1.Model
 /// </summary>
     public class Order
     {
-        [Key]
+        [Key, ForeignKey("UserOrder")]
         [ScaffoldColumn(false)]
         public int OrderId { get; set; }
         [Display(Name ="Client full name")]
@@ -27,5 +28,6 @@ namespace WindowsFormsApp1.Model
         public DateTime DepartureDate{ get; set; }
         public string RoomNumber { get; set; }
         public double TotalCosting { get; set; }
+      public User UserOrder { get; set; }
     }
 }

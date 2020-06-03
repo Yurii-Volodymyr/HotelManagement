@@ -12,7 +12,6 @@ namespace WindowsFormsApp1.Model
     public class Room
     {
         [Key]
-        [ScaffoldColumn(false)]
         public int RoomId { get; set; }
         [ScaffoldColumn(false)]
         [NotMapped]
@@ -36,6 +35,8 @@ namespace WindowsFormsApp1.Model
         }
         public double PricePerWeek { get; set; }
         public string IsAvailable { get; set; }
+        public User UserRoom { get; set; }
+        public Food FoodRoom { get; set; }
     }
     public enum RoomTypes
     {

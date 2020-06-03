@@ -38,7 +38,6 @@
             this.btnOrderRoom = new System.Windows.Forms.Button();
             this.btnEmployee = new System.Windows.Forms.Button();
             this.panelRoomsSubmenu = new System.Windows.Forms.Panel();
-            this.btnRoomCategories = new System.Windows.Forms.Button();
             this.btnRoomList = new System.Windows.Forms.Button();
             this.btnRooms = new System.Windows.Forms.Button();
             this.panelServiceSubmenu = new System.Windows.Forms.Panel();
@@ -50,10 +49,10 @@
             this.panelAdditional = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblDate = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.panelSideMenu.SuspendLayout();
             this.panelEmployeeSubmenu.SuspendLayout();
             this.panelRoomsSubmenu.SuspendLayout();
@@ -89,10 +88,10 @@
             this.btnAbout.FlatAppearance.BorderSize = 0;
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbout.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnAbout.Location = new System.Drawing.Point(0, 518);
+            this.btnAbout.Location = new System.Drawing.Point(0, 474);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAbout.Size = new System.Drawing.Size(229, 45);
+            this.btnAbout.Size = new System.Drawing.Size(250, 45);
             this.btnAbout.TabIndex = 7;
             this.btnAbout.Text = "About";
             this.btnAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -106,9 +105,9 @@
             this.panelEmployeeSubmenu.Controls.Add(this.btnEditOrderAndClient);
             this.panelEmployeeSubmenu.Controls.Add(this.btnOrderRoom);
             this.panelEmployeeSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEmployeeSubmenu.Location = new System.Drawing.Point(0, 392);
+            this.panelEmployeeSubmenu.Location = new System.Drawing.Point(0, 348);
             this.panelEmployeeSubmenu.Name = "panelEmployeeSubmenu";
-            this.panelEmployeeSubmenu.Size = new System.Drawing.Size(229, 126);
+            this.panelEmployeeSubmenu.Size = new System.Drawing.Size(250, 126);
             this.panelEmployeeSubmenu.TabIndex = 6;
             // 
             // btnEditDataRoom
@@ -120,7 +119,7 @@
             this.btnEditDataRoom.Location = new System.Drawing.Point(0, 80);
             this.btnEditDataRoom.Name = "btnEditDataRoom";
             this.btnEditDataRoom.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEditDataRoom.Size = new System.Drawing.Size(229, 40);
+            this.btnEditDataRoom.Size = new System.Drawing.Size(250, 40);
             this.btnEditDataRoom.TabIndex = 2;
             this.btnEditDataRoom.Text = "Edit Room Data";
             this.btnEditDataRoom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,7 +135,7 @@
             this.btnEditOrderAndClient.Location = new System.Drawing.Point(0, 40);
             this.btnEditOrderAndClient.Name = "btnEditOrderAndClient";
             this.btnEditOrderAndClient.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEditOrderAndClient.Size = new System.Drawing.Size(229, 40);
+            this.btnEditOrderAndClient.Size = new System.Drawing.Size(250, 40);
             this.btnEditOrderAndClient.TabIndex = 1;
             this.btnEditOrderAndClient.Text = "Edit Order and Client";
             this.btnEditOrderAndClient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -152,7 +151,7 @@
             this.btnOrderRoom.Location = new System.Drawing.Point(0, 0);
             this.btnOrderRoom.Name = "btnOrderRoom";
             this.btnOrderRoom.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnOrderRoom.Size = new System.Drawing.Size(229, 40);
+            this.btnOrderRoom.Size = new System.Drawing.Size(250, 40);
             this.btnOrderRoom.TabIndex = 0;
             this.btnOrderRoom.Text = "Order Room";
             this.btnOrderRoom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,10 +164,10 @@
             this.btnEmployee.FlatAppearance.BorderSize = 0;
             this.btnEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEmployee.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnEmployee.Location = new System.Drawing.Point(0, 347);
+            this.btnEmployee.Location = new System.Drawing.Point(0, 303);
             this.btnEmployee.Name = "btnEmployee";
             this.btnEmployee.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEmployee.Size = new System.Drawing.Size(229, 45);
+            this.btnEmployee.Size = new System.Drawing.Size(250, 45);
             this.btnEmployee.TabIndex = 5;
             this.btnEmployee.Text = "Employee";
             this.btnEmployee.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,29 +177,12 @@
             // panelRoomsSubmenu
             // 
             this.panelRoomsSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(32)))), ((int)(((byte)(39)))));
-            this.panelRoomsSubmenu.Controls.Add(this.btnRoomCategories);
             this.panelRoomsSubmenu.Controls.Add(this.btnRoomList);
             this.panelRoomsSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelRoomsSubmenu.Location = new System.Drawing.Point(0, 260);
             this.panelRoomsSubmenu.Name = "panelRoomsSubmenu";
-            this.panelRoomsSubmenu.Size = new System.Drawing.Size(229, 87);
+            this.panelRoomsSubmenu.Size = new System.Drawing.Size(250, 43);
             this.panelRoomsSubmenu.TabIndex = 4;
-            // 
-            // btnRoomCategories
-            // 
-            this.btnRoomCategories.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRoomCategories.FlatAppearance.BorderSize = 0;
-            this.btnRoomCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRoomCategories.ForeColor = System.Drawing.Color.LightGray;
-            this.btnRoomCategories.Location = new System.Drawing.Point(0, 40);
-            this.btnRoomCategories.Name = "btnRoomCategories";
-            this.btnRoomCategories.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoomCategories.Size = new System.Drawing.Size(229, 40);
-            this.btnRoomCategories.TabIndex = 1;
-            this.btnRoomCategories.Text = "Room Categories";
-            this.btnRoomCategories.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRoomCategories.UseVisualStyleBackColor = true;
-            this.btnRoomCategories.Click += new System.EventHandler(this.btnRoomCategories_Click);
             // 
             // btnRoomList
             // 
@@ -211,7 +193,7 @@
             this.btnRoomList.Location = new System.Drawing.Point(0, 0);
             this.btnRoomList.Name = "btnRoomList";
             this.btnRoomList.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoomList.Size = new System.Drawing.Size(229, 40);
+            this.btnRoomList.Size = new System.Drawing.Size(250, 40);
             this.btnRoomList.TabIndex = 0;
             this.btnRoomList.Text = "Room List";
             this.btnRoomList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -227,7 +209,7 @@
             this.btnRooms.Location = new System.Drawing.Point(0, 215);
             this.btnRooms.Name = "btnRooms";
             this.btnRooms.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnRooms.Size = new System.Drawing.Size(229, 45);
+            this.btnRooms.Size = new System.Drawing.Size(250, 45);
             this.btnRooms.TabIndex = 3;
             this.btnRooms.Text = "Rooms";
             this.btnRooms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,7 +224,7 @@
             this.panelServiceSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelServiceSubmenu.Location = new System.Drawing.Point(0, 128);
             this.panelServiceSubmenu.Name = "panelServiceSubmenu";
-            this.panelServiceSubmenu.Size = new System.Drawing.Size(229, 87);
+            this.panelServiceSubmenu.Size = new System.Drawing.Size(250, 87);
             this.panelServiceSubmenu.TabIndex = 2;
             // 
             // btnRoom
@@ -254,7 +236,7 @@
             this.btnRoom.Location = new System.Drawing.Point(0, 40);
             this.btnRoom.Name = "btnRoom";
             this.btnRoom.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRoom.Size = new System.Drawing.Size(229, 40);
+            this.btnRoom.Size = new System.Drawing.Size(250, 40);
             this.btnRoom.TabIndex = 1;
             this.btnRoom.Text = "Room";
             this.btnRoom.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -270,7 +252,7 @@
             this.btnFood.Location = new System.Drawing.Point(0, 0);
             this.btnFood.Name = "btnFood";
             this.btnFood.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnFood.Size = new System.Drawing.Size(229, 40);
+            this.btnFood.Size = new System.Drawing.Size(250, 40);
             this.btnFood.TabIndex = 0;
             this.btnFood.Text = "Food";
             this.btnFood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,7 +268,7 @@
             this.btnService.Location = new System.Drawing.Point(0, 83);
             this.btnService.Name = "btnService";
             this.btnService.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnService.Size = new System.Drawing.Size(229, 45);
+            this.btnService.Size = new System.Drawing.Size(250, 45);
             this.btnService.TabIndex = 1;
             this.btnService.Text = "Service";
             this.btnService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -299,7 +281,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(229, 83);
+            this.panelLogo.Size = new System.Drawing.Size(250, 83);
             this.panelLogo.TabIndex = 0;
             // 
             // label1
@@ -347,6 +329,17 @@
             this.panelChildForm.Size = new System.Drawing.Size(682, 518);
             this.panelChildForm.TabIndex = 6;
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(635, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 31);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Off";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
@@ -374,17 +367,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // button1
-            // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(635, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(44, 31);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Off";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -431,7 +413,6 @@
         private System.Windows.Forms.Button btnOrderRoom;
         private System.Windows.Forms.Button btnEmployee;
         private System.Windows.Forms.Panel panelRoomsSubmenu;
-        private System.Windows.Forms.Button btnRoomCategories;
         private System.Windows.Forms.Button btnRoomList;
         private System.Windows.Forms.Button btnRooms;
         private System.Windows.Forms.Button btnAbout;

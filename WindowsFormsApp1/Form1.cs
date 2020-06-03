@@ -9,6 +9,15 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             customizeDesign();
+            if (LoginForm.loginedRole == "Employee")
+            {
+                btnEmployee.Visible = true;
+            }
+            else
+            {
+                btnEmployee.Visible = false;
+
+            }
         }
 
         //customize left menu bar
@@ -19,7 +28,9 @@ namespace WindowsFormsApp1
             panelRoomsSubmenu.Visible = false;
             panelServiceSubmenu.Visible = false;
         }
-
+        /// <summary>
+        /// hide sub-menu method
+        /// </summary>
         private void hideSubMenu()
         {
             if (panelEmployeeSubmenu.Visible == true)
@@ -35,7 +46,7 @@ namespace WindowsFormsApp1
                 panelServiceSubmenu.Visible = false;
             }
         }
-
+        //
         private void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -45,7 +56,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                subMenu.Visible = true;
+                subMenu.Visible = false;
             }
         }
 
@@ -106,8 +117,10 @@ namespace WindowsFormsApp1
         #region MenuButtons
 
         private void btnService_Click(object sender, EventArgs e)
+
         {
             showSubMenu(panelServiceSubmenu);
+
         }
         private void btnRooms_Click(object sender, EventArgs e)
         {
@@ -116,13 +129,12 @@ namespace WindowsFormsApp1
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-
-            showSubMenu(panelEmployeeSubmenu);
+            if (LoginForm.loginedRole == "Employee")
+                showSubMenu(panelEmployeeSubmenu);
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            //show form
             hideSubMenu();
         }
         #endregion
@@ -173,6 +185,6 @@ namespace WindowsFormsApp1
             login.Show();
             this.Close();
         }
-       
+
     }
 }

@@ -46,22 +46,21 @@
             this.radioOrdered = new System.Windows.Forms.RadioButton();
             this.radioAvailable = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roomsDataSet = new WindowsFormsApp1.RoomsDataSet();
             this.label5 = new System.Windows.Forms.Label();
             this.cbRoomType = new System.Windows.Forms.ComboBox();
-            this.roomsTableAdapter = new WindowsFormsApp1.HotelDbContextDataSetTableAdapters.RoomsTableAdapter();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomTypesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomImageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.pricePerWeekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAvailableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roomTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBack
@@ -146,6 +145,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "Description", true));
             this.richTextBox1.Location = new System.Drawing.Point(62, 124);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(714, 160);
@@ -154,6 +154,7 @@
             // 
             // txtRoomNumb
             // 
+            this.txtRoomNumb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "RoomNumber", true));
             this.txtRoomNumb.Location = new System.Drawing.Point(180, 59);
             this.txtRoomNumb.Name = "txtRoomNumb";
             this.txtRoomNumb.Size = new System.Drawing.Size(100, 22);
@@ -161,6 +162,7 @@
             // 
             // txtImgSource
             // 
+            this.txtImgSource.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "RoomImage", true));
             this.txtImgSource.Location = new System.Drawing.Point(419, 59);
             this.txtImgSource.Name = "txtImgSource";
             this.txtImgSource.Size = new System.Drawing.Size(121, 22);
@@ -169,6 +171,7 @@
             // 
             // txtPricePerWeek
             // 
+            this.txtPricePerWeek.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "PricePerWeek", true));
             this.txtPricePerWeek.Location = new System.Drawing.Point(673, 59);
             this.txtPricePerWeek.Name = "txtPricePerWeek";
             this.txtPricePerWeek.Size = new System.Drawing.Size(100, 22);
@@ -228,30 +231,23 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roomIdDataGridViewTextBoxColumn,
+            this.roomTypesDataGridViewTextBoxColumn,
+            this.roomTypeDataGridViewTextBoxColumn,
             this.roomNumberDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
             this.roomImageDataGridViewTextBoxColumn,
+            this.imageDataGridViewImageColumn,
             this.pricePerWeekDataGridViewTextBoxColumn,
-            this.isAvailableDataGridViewTextBoxColumn,
-            this.roomTypeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.roomsBindingSource;
+            this.isAvailableDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.roomBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(62, 308);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(813, 233);
             this.dataGridView1.TabIndex = 72;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // roomsBindingSource
-            // 
-            this.roomsBindingSource.DataMember = "Rooms";
-            this.roomsBindingSource.DataSource = this.roomsDataSet;
-            // 
-            // roomsDataSet
-            // 
-            this.roomsDataSet.DataSetName = "HotelDbContextDataSet";
-            this.roomsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label5
             // 
@@ -265,15 +261,16 @@
             // 
             // cbRoomType
             // 
+            this.cbRoomType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.roomBindingSource, "RoomType", true));
             this.cbRoomType.FormattingEnabled = true;
             this.cbRoomType.Location = new System.Drawing.Point(419, 91);
             this.cbRoomType.Name = "cbRoomType";
             this.cbRoomType.Size = new System.Drawing.Size(121, 24);
             this.cbRoomType.TabIndex = 74;
             // 
-            // roomsTableAdapter
+            // roomBindingSource
             // 
-            this.roomsTableAdapter.ClearBeforeFill = true;
+            this.roomBindingSource.DataSource = typeof(WindowsFormsApp1.Model.Room);
             // 
             // roomIdDataGridViewTextBoxColumn
             // 
@@ -285,12 +282,32 @@
             this.roomIdDataGridViewTextBoxColumn.Visible = false;
             this.roomIdDataGridViewTextBoxColumn.Width = 125;
             // 
+            // roomTypesDataGridViewTextBoxColumn
+            // 
+            this.roomTypesDataGridViewTextBoxColumn.DataPropertyName = "roomTypes";
+            this.roomTypesDataGridViewTextBoxColumn.HeaderText = "roomTypes";
+            this.roomTypesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.roomTypesDataGridViewTextBoxColumn.Name = "roomTypesDataGridViewTextBoxColumn";
+            this.roomTypesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.roomTypesDataGridViewTextBoxColumn.Visible = false;
+            this.roomTypesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // roomTypeDataGridViewTextBoxColumn
+            // 
+            this.roomTypeDataGridViewTextBoxColumn.DataPropertyName = "RoomType";
+            this.roomTypeDataGridViewTextBoxColumn.HeaderText = "RoomType";
+            this.roomTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
+            this.roomTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.roomTypeDataGridViewTextBoxColumn.Width = 125;
+            // 
             // roomNumberDataGridViewTextBoxColumn
             // 
             this.roomNumberDataGridViewTextBoxColumn.DataPropertyName = "RoomNumber";
             this.roomNumberDataGridViewTextBoxColumn.HeaderText = "RoomNumber";
             this.roomNumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roomNumberDataGridViewTextBoxColumn.Name = "roomNumberDataGridViewTextBoxColumn";
+            this.roomNumberDataGridViewTextBoxColumn.ReadOnly = true;
             this.roomNumberDataGridViewTextBoxColumn.Width = 125;
             // 
             // descriptionDataGridViewTextBoxColumn
@@ -299,6 +316,7 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
             this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
             // roomImageDataGridViewTextBoxColumn
@@ -307,7 +325,19 @@
             this.roomImageDataGridViewTextBoxColumn.HeaderText = "RoomImage";
             this.roomImageDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roomImageDataGridViewTextBoxColumn.Name = "roomImageDataGridViewTextBoxColumn";
+            this.roomImageDataGridViewTextBoxColumn.ReadOnly = true;
+            this.roomImageDataGridViewTextBoxColumn.Visible = false;
             this.roomImageDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // imageDataGridViewImageColumn
+            // 
+            this.imageDataGridViewImageColumn.DataPropertyName = "image";
+            this.imageDataGridViewImageColumn.HeaderText = "image";
+            this.imageDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.imageDataGridViewImageColumn.MinimumWidth = 6;
+            this.imageDataGridViewImageColumn.Name = "imageDataGridViewImageColumn";
+            this.imageDataGridViewImageColumn.ReadOnly = true;
+            this.imageDataGridViewImageColumn.Width = 125;
             // 
             // pricePerWeekDataGridViewTextBoxColumn
             // 
@@ -315,6 +345,7 @@
             this.pricePerWeekDataGridViewTextBoxColumn.HeaderText = "PricePerWeek";
             this.pricePerWeekDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.pricePerWeekDataGridViewTextBoxColumn.Name = "pricePerWeekDataGridViewTextBoxColumn";
+            this.pricePerWeekDataGridViewTextBoxColumn.ReadOnly = true;
             this.pricePerWeekDataGridViewTextBoxColumn.Width = 125;
             // 
             // isAvailableDataGridViewTextBoxColumn
@@ -323,15 +354,8 @@
             this.isAvailableDataGridViewTextBoxColumn.HeaderText = "IsAvailable";
             this.isAvailableDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.isAvailableDataGridViewTextBoxColumn.Name = "isAvailableDataGridViewTextBoxColumn";
+            this.isAvailableDataGridViewTextBoxColumn.ReadOnly = true;
             this.isAvailableDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // roomTypeDataGridViewTextBoxColumn
-            // 
-            this.roomTypeDataGridViewTextBoxColumn.DataPropertyName = "RoomType";
-            this.roomTypeDataGridViewTextBoxColumn.HeaderText = "RoomType";
-            this.roomTypeDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.roomTypeDataGridViewTextBoxColumn.Name = "roomTypeDataGridViewTextBoxColumn";
-            this.roomTypeDataGridViewTextBoxColumn.Width = 125;
             // 
             // A_EditRoomData
             // 
@@ -362,8 +386,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,15 +417,15 @@
 
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbRoomType;
-        private RoomsDataSet roomsDataSet;
-        private System.Windows.Forms.BindingSource roomsBindingSource;
-        private HotelDbContextDataSetTableAdapters.RoomsTableAdapter roomsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomTypesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roomTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomImageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn imageDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pricePerWeekDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn isAvailableDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roomTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource roomBindingSource;
     }
 }

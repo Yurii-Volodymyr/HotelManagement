@@ -84,6 +84,12 @@
   <ItemGroup>
     <Compile Include="Domain\HotelWinFormsDbContext.cs" />
     <Compile Include="Domain\LoginClass.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Map\FoodMap.cs" />
+    <Compile Include="Model\Map\OrderMap.cs" />
+    <Compile Include="Model\Map\RoomMap.cs" />
+    <Compile Include="Model\Map\UserMap.cs" />
+    <Compile Include="Model\Map\UserRoleMap.cs" />
     <Compile Include="Domain\RoomClass.cs" />
     <Compile Include="A_EditOrderAndClient.cs">
       <SubType>Form</SubType>
@@ -92,38 +98,11 @@
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\TestData.cs" />
-    <Compile Include="RoomsDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005291909530_adws.cs" />
-    <Compile Include="Migrations\202005291909530_adws.designer.cs">
-      <DependentUpon>202005291909530_adws.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005292233082_ss.cs" />
-    <Compile Include="Migrations\202005292233082_ss.designer.cs">
-      <DependentUpon>202005292233082_ss.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005301603433_ss2.cs" />
-    <Compile Include="Migrations\202005301603433_ss2.designer.cs">
-      <DependentUpon>202005301603433_ss2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202005301726577_ss3.cs" />
-    <Compile Include="Migrations\202005301726577_ss3.designer.cs">
-      <DependentUpon>202005301726577_ss3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Model\UserRoles.cs" />
-    <Compile Include="OrdersDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Model\UserRole.cs" />
     <Compile Include="ServiceFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,12 +141,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomCategories.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RoomCategories.Designer.cs">
-      <DependentUpon>RoomCategories.cs</DependentUpon>
-    </Compile>
     <Compile Include="RoomList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,18 +155,6 @@
     </Compile>
     <EmbeddedResource Include="A_EditOrderAndClient.resx">
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005291909530_adws.resx">
-      <DependentUpon>202005291909530_adws.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005292233082_ss.resx">
-      <DependentUpon>202005292233082_ss.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005301603433_ss2.resx">
-      <DependentUpon>202005301603433_ss2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005301726577_ss3.resx">
-      <DependentUpon>202005301726577_ss3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServiceFood.resx">
       <DependentUpon>ServiceFood.cs</DependentUpon>
@@ -223,36 +184,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RoomCategories.resx">
-      <DependentUpon>RoomCategories.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RoomList.resx">
       <DependentUpon>RoomList.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Room.datasource" />
-    <None Include="RoomsDataSet.xsc">
-      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="RoomsDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RoomsDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="RoomsDataSet.xss">
-      <DependentUpon>RoomsDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="OrdersDataSet.xsc">
-      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="OrdersDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OrdersDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="OrdersDataSet.xss">
-      <DependentUpon>OrdersDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Order.datasource" />
+    <None Include="Properties\DataSources\WindowsFormsApp1.Model.Room.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

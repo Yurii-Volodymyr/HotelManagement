@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity.Migrations;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Domain;
 using WindowsFormsApp1.Model;
@@ -35,7 +29,7 @@ namespace WindowsFormsApp1
         private void A_EditOrderAndClient_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'ordersDataSet.Orders' table. You can move, or remove it, as needed.
-            this.ordersTableAdapter.Fill(this.ordersDataSet.Orders);
+            //this.ordersTableAdapter.Fill(this.ordersDataSet.Orders);
 
         }
         int indexRow;
@@ -77,7 +71,7 @@ namespace WindowsFormsApp1
                     int result = db.SaveChanges();
                     if (result > 0)
                     {
-                        this.ordersTableAdapter.Fill(this.ordersDataSet.Orders);
+                        //this.ordersTableAdapter.Fill(this.ordersDataSet.Orders);
 
                         MessageBox.Show("Order updated", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

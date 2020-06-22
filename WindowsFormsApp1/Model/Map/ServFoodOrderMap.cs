@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Model.Map
 {
-   public class ToRoomOrderMap: EntityTypeConfiguration<ToRoomOrder>
+   public class ServFoodOrderMap: EntityTypeConfiguration<ServFoodOrder>
     {
-        public ToRoomOrderMap()
+        public ServFoodOrderMap()
         {
-            this.HasKey(t => t.ToRoomOrderId);
+            this.HasKey(t => t.ServFoodOrderId);
        
-            this.ToTable("ToRoomOrder","dbo");
+            this.ToTable("ServFoodOrder", "dbo");
         }
     }
 }

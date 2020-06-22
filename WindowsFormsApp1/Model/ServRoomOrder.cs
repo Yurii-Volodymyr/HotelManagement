@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Model
 {
-    public class ToRoomOrder
+    public class ServRoomOrder
     {
-        public int ToRoomOrderId { get; set; }
-        public string Burger { get; set; }
-        public string Cake { get; set; }
-        public string Pizza { get; set; }
+        public int ServRoomOrderId { get; set; }
+        public string Towels { get; set; }
+        public bool Cleening { get; set; }
         public int RoomId { get; set; }
         [ForeignKey("RoomId")]
-        public virtual ICollection<Room> Rooms{ get; set; }
+        public virtual ICollection<Room> Rooms { get; set; }
     }
 }

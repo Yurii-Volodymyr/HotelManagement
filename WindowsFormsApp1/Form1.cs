@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
 
         private void btnRoom_Click(object sender, EventArgs e)
         {
-            //show form
+            openChildForm(new ServiceRoom());
             hideSubMenu();
         }
         //-----------

@@ -44,7 +44,7 @@ namespace WindowsFormsApp1.Model
         [ForeignKey("UserRoomId")]
         public virtual User UserRoom { get; set; }
         [ForeignKey("RoomOrderId")]
-        public virtual ToRoomOrder RoomOrder { get; set; }
+        public virtual ServFoodOrder RoomOrder { get; set; }
     }
     public enum RoomTypes
     {

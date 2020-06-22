@@ -19,13 +19,15 @@ namespace WindowsFormsApp1.Model.Map
             this.Property(t => t.RoomNumber);
             this.Property(t => t.RoomType);
 
-            this.HasRequired(t => t.FoodRoom)
-                .WithRequiredPrincipal(g =>g.RoomFood);
+            this.HasRequired<ToRoomOrder>(s => s.RoomOrder)
+                        .WithMany(g => g.Rooms)
+                        .HasForeignKey<int>(s => s.RoomOrderId);
 
+            this.ToTable("Rooms","dbo");
+            this.Property(t => t.RoomId).HasColumnName("RoomId");
             this.Property(t => t.Description).HasColumnName("Description");
             this.Property(t => t.IsAvailable).HasColumnName("IsAvailable");
             this.Property(t => t.PricePerWeek).HasColumnName("PricePerWeek");
-            this.Property(t => t.RoomId).HasColumnName("RoomId");
             this.Property(t => t.RoomImage).HasColumnName("RoomImage");
             this.Property(t => t.RoomNumber).HasColumnName("RoomNumber");
             this.Property(t => t.RoomType).HasColumnName("RoomType");

@@ -17,11 +17,15 @@ namespace WindowsFormsApp1.Model
         /// <summary>
         /// UserRole is a foreign key to UserRoles. Relation many(users)-to-one(role)
         /// </summary>
-        [ForeignKey("UserRole")]
         public int UserRoleId { get; set; }
+        public int OrderId { get; set; }
+        public int RoomId { get; set; }
+        [ForeignKey("UserRoleId")]
         public virtual UserRole UserRole { get; set; }
-        public Order OrderUser { get; set; }
-        public Room RoomUserId { get; set; }
+        [ForeignKey("OrderId")]
+        public virtual Order OrderUser { get; set; }
+        [ForeignKey("RoomId")]
+        public virtual Room RoomUser { get; set; }
 
     }
 }

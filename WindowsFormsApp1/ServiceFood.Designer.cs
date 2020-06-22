@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServiceFood));
             this.label3 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnOrder = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbBurger = new System.Windows.Forms.ComboBox();
+            this.cbCake = new System.Windows.Forms.ComboBox();
+            this.cbPizza = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -49,76 +49,31 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(441, 290);
+            this.label3.Location = new System.Drawing.Point(488, 286);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 17);
             this.label3.TabIndex = 22;
             this.label3.Text = "Pizza";
             // 
-            // listBox3
-            // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 16;
-            this.listBox3.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.listBox3.Location = new System.Drawing.Point(373, 287);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(62, 20);
-            this.listBox3.TabIndex = 21;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(259, 289);
+            this.label2.Location = new System.Drawing.Point(312, 286);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 17);
             this.label2.TabIndex = 20;
             this.label2.Text = "Cake";
             // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 16;
-            this.listBox2.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.listBox2.Location = new System.Drawing.Point(191, 286);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(62, 20);
-            this.listBox2.TabIndex = 19;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(72, 290);
+            this.label1.Location = new System.Drawing.Point(119, 286);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 18;
             this.label1.Text = "Burger";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.listBox1.Location = new System.Drawing.Point(4, 287);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(62, 20);
-            this.listBox1.TabIndex = 17;
             // 
             // btnOrder
             // 
@@ -128,6 +83,7 @@
             this.btnOrder.TabIndex = 16;
             this.btnOrder.Text = "Order";
             this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // pictureBox3
             // 
@@ -169,19 +125,58 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cbBurger
+            // 
+            this.cbBurger.FormattingEnabled = true;
+            this.cbBurger.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbBurger.Location = new System.Drawing.Point(4, 283);
+            this.cbBurger.Name = "cbBurger";
+            this.cbBurger.Size = new System.Drawing.Size(86, 24);
+            this.cbBurger.TabIndex = 24;
+            // 
+            // cbCake
+            // 
+            this.cbCake.FormattingEnabled = true;
+            this.cbCake.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbCake.Location = new System.Drawing.Point(191, 283);
+            this.cbCake.Name = "cbCake";
+            this.cbCake.Size = new System.Drawing.Size(86, 24);
+            this.cbCake.TabIndex = 25;
+            // 
+            // cbPizza
+            // 
+            this.cbPizza.FormattingEnabled = true;
+            this.cbPizza.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.cbPizza.Location = new System.Drawing.Point(373, 283);
+            this.cbPizza.Name = "cbPizza";
+            this.cbPizza.Size = new System.Drawing.Size(86, 24);
+            this.cbPizza.TabIndex = 26;
+            // 
             // ServiceFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(30)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(563, 474);
+            this.Controls.Add(this.cbPizza);
+            this.Controls.Add(this.cbCake);
+            this.Controls.Add(this.cbBurger);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listBox3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -200,15 +195,15 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbBurger;
+        private System.Windows.Forms.ComboBox cbCake;
+        private System.Windows.Forms.ComboBox cbPizza;
     }
 }

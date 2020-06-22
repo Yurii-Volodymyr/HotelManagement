@@ -35,8 +35,16 @@ namespace WindowsFormsApp1.Model
         }
         public double PricePerWeek { get; set; }
         public string IsAvailable { get; set; }
-        public User UserRoom { get; set; }
-        public Food FoodRoom { get; set; }
+        public int UserRoomId{ get; set; }
+        public int FoodRoomId { get; set; }
+        public int RoomOrderId { get; set; }
+
+        [ForeignKey("FoodRoomId")]
+        public virtual Food FoodRoom { get; set; }
+        [ForeignKey("UserRoomId")]
+        public virtual User UserRoom { get; set; }
+        [ForeignKey("RoomOrderId")]
+        public virtual ToRoomOrder RoomOrder { get; set; }
     }
     public enum RoomTypes
     {

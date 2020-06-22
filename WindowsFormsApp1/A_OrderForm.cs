@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
@@ -26,11 +27,11 @@ namespace WindowsFormsApp1
         {
             this.Close();
         }
-        private void A_OrderForm_Load(object sender, EventArgs e)
+        private async void A_OrderForm_Load(object sender, EventArgs e)
         {
             using (var db = new HotelWinFormsDbContext())
             {
-                cbRoomNumber.DataSource = (db.Rooms.Where(x => x.IsAvailable == "Available").ToList());
+                cbRoomNumber.DataSource = await (db.Rooms.Where(x => x.IsAvailable == "Available").ToListAsync());
             }
             dateDepartureDate.MinDate = DateTime.Today.AddDays(1);
             dateDepartureDate.MaxDate = DateTime.Today.AddMonths(13);

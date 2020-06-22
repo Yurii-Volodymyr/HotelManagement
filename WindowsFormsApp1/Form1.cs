@@ -15,6 +15,7 @@ namespace WindowsFormsApp1
             }
             else
             {
+                //poprawyty
                 btnEmployee.Visible = false;
 
             }
@@ -135,12 +136,13 @@ namespace WindowsFormsApp1
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
+            openChildForm(new ResultTrue());
             hideSubMenu();
         }
         #endregion
 
         private Form activeForm = null;
-        private void openChildForm(Form childFrom)
+        public void openChildForm(Form childFrom)
         {
             if (activeForm != null)
             {
@@ -155,7 +157,6 @@ namespace WindowsFormsApp1
             panelChildForm.Tag = childFrom;
             childFrom.BringToFront();
             childFrom.Show();
-
         }
 
         //current time

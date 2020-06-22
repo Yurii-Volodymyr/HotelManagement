@@ -12,22 +12,23 @@ namespace WindowsFormsApp1.Model
 /// </summary>
     public class Order
     {
-        [Key, ForeignKey("UserOrder")]
+        [Key]
         [ScaffoldColumn(false)]
         public int OrderId { get; set; }
-        [Display(Name ="Client full name")]
+        [Display(Name = "Client full name")]
         public string ClientName { get; set; }
         public DateTime BirthDay { get; set; }
         public string Email { get; set; }
-        public int Phone{ get; set; }
-        public string Gender{ get; set; }
-        public string Passport{ get; set; }
+        public int Phone { get; set; }
+        public string Gender { get; set; }
+        public string Passport { get; set; }
         [Display(Name = "Entry Date")]
-        public DateTime EntryDate{ get; set; }
+        public DateTime EntryDate { get; set; }
         [Display(Name = "Departure Date")]
-        public DateTime DepartureDate{ get; set; }
+        public DateTime DepartureDate { get; set; }
         public string RoomNumber { get; set; }
         public double TotalCosting { get; set; }
-      public User UserOrder { get; set; }
+        public int UserOrderId { get; set; }
+        public virtual User UserOrder { get; set; }
     }
 }

@@ -417,7 +417,7 @@
         private System.Windows.Forms.Button btnRooms;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Panel panelAdditional;
-        private System.Windows.Forms.Panel panelChildForm;
+        public System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;

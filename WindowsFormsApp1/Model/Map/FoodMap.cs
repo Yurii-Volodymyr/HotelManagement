@@ -13,12 +13,13 @@ namespace WindowsFormsApp1.Model.Map
         {
             this.HasKey(t => t.FoodId);
             this.Property(t => t.FoodName);
-            this.Property(t => t.Photo);
+            this.Property(t => t.PhotoPath);
             this.Property(t => t.Price);
 
+            this.ToTable("Foods");
             this.Property(t => t.FoodId).HasColumnName("FoodId");
             this.Property(t => t.FoodName).HasColumnName("FoodName");
-            this.Property(t => t.Photo).HasColumnName("Photo");
+            this.Property(t => t.PhotoPath).HasColumnName("Photo");
             this.Property(t => t.Price).HasColumnName("Price");
         }
     }

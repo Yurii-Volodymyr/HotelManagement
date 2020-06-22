@@ -13,20 +13,23 @@ namespace WindowsFormsApp1.Model.Map
         public UserMap()
         {
             this.HasKey(t => t.UserId);
-            this.Property(t=>t.Login).IsRequired();
-            this.Property(t=>t.Password).IsRequired();
-            this.Property(t=>t.UserRoleId).IsRequired();
+            this.Property(t => t.Login).IsRequired();
+            this.Property(t => t.Password).IsRequired();
+            this.Property(t => t.UserRoleId).IsRequired();
 
             this.HasRequired<Order>(s => s.OrderUser)
                 .WithRequiredPrincipal(ou => ou.UserOrder);
             this.HasRequired<UserRole>(s => s.UserRole)
                 .WithMany(g => g.Users)
                 .HasForeignKey<int>(s => s.UserRoleId);
+            this.HasRequired<Room>(s => s.RoomUser)
+                .WithRequiredPrincipal(ou => ou.UserRoom);
 
-            this.ToTable("Users","dbo");
-            this.Property(t=>t.UserId).HasColumnName("UserId");
-            this.Property(t=>t.Login).HasColumnName("Login");
-            this.Property(t=>t.Password).HasColumnName("Password");
+            this.ToTable("Users", "dbo");
+            this.Property(t => t.UserId).HasColumnName("UserId");
+            this.Property(t => t.Login).HasColumnName("Login");
+            this.Property(t => t.Password).HasColumnName("Password");
+            this.Property(t => t.UserRoleId).HasColumnName("UserRoleId");
         }
     }
 }

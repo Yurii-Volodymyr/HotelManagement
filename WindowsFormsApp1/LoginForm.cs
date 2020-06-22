@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
 using WindowsFormsApp1.Domain;
@@ -21,7 +22,7 @@ namespace WindowsFormsApp1
         }
         public static string loginedRole;
         public static int roomId;
-        private void LoginMethod()
+        private async void LoginMethod()
         {
             string login = txtLogin.Text;
             string password = txtPassword.Text;
@@ -36,7 +37,7 @@ namespace WindowsFormsApp1
             {
                 using (var db = new HotelWinFormsDbContext())
                 {
-                    var t = db.Users.ToList();
+                    var t = await db.Users.ToListAsync();
                     var userLogin = db.Users.Where(x => x.Login == login).Where(x => x.Password == password).FirstOrDefault();
                     if (userLogin == null)
                     {
@@ -46,7 +47,7 @@ namespace WindowsFormsApp1
                     {
 
                         loginedRole = userLogin.UserRole.UserRoleName;
-                        roomId = userLogin.RoomUserId.RoomId;
+                        roomId = userLogin.RoomUser.RoomId;
                         this.Hide();
                         Form1 f = new Form1();
                         f.Show();

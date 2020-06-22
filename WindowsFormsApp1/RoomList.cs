@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -24,11 +25,11 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void RoomList_Load(object sender, EventArgs e)
+        private async void RoomList_Load(object sender, EventArgs e)
         {
             using (var db = new HotelWinFormsDbContext())
             {
-                roomBindingSource.DataSource = db.Rooms.ToList();
+                roomBindingSource.DataSource = await db.Rooms.ToListAsync();
             }
         }
 

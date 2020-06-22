@@ -84,12 +84,6 @@
   <ItemGroup>
     <Compile Include="Domain\HotelWinFormsDbContext.cs" />
     <Compile Include="Domain\LoginClass.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Model\Map\FoodMap.cs" />
-    <Compile Include="Model\Map\OrderMap.cs" />
-    <Compile Include="Model\Map\RoomMap.cs" />
-    <Compile Include="Model\Map\UserMap.cs" />
-    <Compile Include="Model\Map\UserRoleMap.cs" />
     <Compile Include="Domain\RoomClass.cs" />
     <Compile Include="A_EditOrderAndClient.cs">
       <SubType>Form</SubType>
@@ -98,11 +92,37 @@
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\TestData.cs" />
+    <Compile Include="Migrations\202006221324135_errorHandling.cs" />
+    <Compile Include="Migrations\202006221324135_errorHandling.designer.cs">
+      <DependentUpon>202006221324135_errorHandling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006221329482_errorHandling1.cs" />
+    <Compile Include="Migrations\202006221329482_errorHandling1.designer.cs">
+      <DependentUpon>202006221329482_errorHandling1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006221531185_a.cs" />
+    <Compile Include="Migrations\202006221531185_a.designer.cs">
+      <DependentUpon>202006221531185_a.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Food.cs" />
+    <Compile Include="Model\Map\FoodMap.cs" />
+    <Compile Include="Model\Map\OrderMap.cs" />
+    <Compile Include="Model\Map\RoomMap.cs" />
+    <Compile Include="Model\Map\ToRoomOrderMap.cs" />
+    <Compile Include="Model\Map\UserMap.cs" />
+    <Compile Include="Model\Map\UserRoleMap.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Room.cs" />
+    <Compile Include="Model\ToRoomOrder.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\UserRole.cs" />
+    <Compile Include="ResultTrue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultTrue.Designer.cs">
+      <DependentUpon>ResultTrue.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServiceFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,8 +176,11 @@
     <EmbeddedResource Include="A_EditOrderAndClient.resx">
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ServiceFood.resx">
-      <DependentUpon>ServiceFood.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006221324135_errorHandling.resx">
+      <DependentUpon>202006221324135_errorHandling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006221329482_errorHandling1.resx">
+      <DependentUpon>202006221329482_errorHandling1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -174,6 +197,9 @@
     <EmbeddedResource Include="A_OrderForm.resx">
       <DependentUpon>A_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006221531185_a.resx">
+      <DependentUpon>202006221531185_a.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -184,8 +210,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResultTrue.resx">
+      <DependentUpon>ResultTrue.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RoomList.resx">
       <DependentUpon>RoomList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceFood.resx">
+      <DependentUpon>ServiceFood.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\WindowsFormsApp1.Model.Order.datasource" />
@@ -205,7 +237,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AppData\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -218,6 +249,13 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pictureBox1.Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\pictureBox2.Image.png" />
+    <Content Include="Resources\pictureBox3.Image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

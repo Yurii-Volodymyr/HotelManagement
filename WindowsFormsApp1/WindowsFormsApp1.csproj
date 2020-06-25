@@ -83,18 +83,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\HotelWinFormsDbContext.cs" />
-    <Compile Include="Domain\LoginClass.cs" />
-    <Compile Include="Domain\RoomClass.cs" />
     <Compile Include="A_EditOrderAndClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="A_EditOrderAndClient.Designer.cs">
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\TestData.cs" />
-    <Compile Include="Migrations\202006222043352_roomssssss.cs" />
-    <Compile Include="Migrations\202006222043352_roomssssss.designer.cs">
-      <DependentUpon>202006222043352_roomssssss.cs</DependentUpon>
+    <Compile Include="Migrations\202006251504438_database.cs" />
+    <Compile Include="Migrations\202006251504438_database.designer.cs">
+      <DependentUpon>202006251504438_database.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Food.cs" />
@@ -185,8 +182,8 @@
     <EmbeddedResource Include="A_OrderForm.resx">
       <DependentUpon>A_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006222043352_roomssssss.resx">
-      <DependentUpon>202006222043352_roomssssss.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006251504438_database.resx">
+      <DependentUpon>202006251504438_database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

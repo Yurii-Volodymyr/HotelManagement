@@ -21,9 +21,9 @@ namespace WindowsFormsApp1
 
         private async void btnOrder_Click(object sender, EventArgs e)
         {
-            if (cbTowels.Text!= "" || cbCleening.Checked!=false)
+            if (LoginForm.roomId != 1)
             {
-                if (LoginForm.roomId != 0)
+                if (cbTowels.Text != "" || cbCleening.Checked != false)
                 {
                     using (var db = new HotelWinFormsDbContext())
                     {
@@ -41,12 +41,12 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    MessageBox.Show("You loginned as guest");
+                    MessageBox.Show("Choose something", "Order cannot be null", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Choose something", "Order cannot be null", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You loginned as guest");
             }
         }
     }

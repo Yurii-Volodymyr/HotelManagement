@@ -26,9 +26,9 @@ namespace WindowsFormsApp1
 
         private async void btnOrder_Click(object sender, EventArgs e)
         {
-            if (cbBurger.Text != "" || cbCake.Text != "" || cbPizza.Text != "")
+            if (LoginForm.roomId != 0)
             {
-                if (LoginForm.roomId != 0)
+                if (cbBurger.Text != "" || cbCake.Text != "" || cbPizza.Text != "")
                 {
                     using (var db = new HotelWinFormsDbContext())
                     {
@@ -37,7 +37,7 @@ namespace WindowsFormsApp1
                         servFood.Cake = cbCake.Text;
                         servFood.Pizza = cbPizza.Text;
                         servFood.RoomId = LoginForm.roomId;
-                        this.Close();
+
                         Form1 form = new Form1();
                         form.openChildForm(new ResultTrue());
 
@@ -47,12 +47,12 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    MessageBox.Show("You loginned as guest");
+                    MessageBox.Show("Choose something", "Order cannot be null", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Choose something", "Order cannot be null", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("You loginned as guest");
             }
         }
     }

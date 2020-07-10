@@ -13,8 +13,8 @@ namespace WindowsFormsApp1.Model
         public string Burger { get; set; }
         public string Cake { get; set; }
         public string Pizza { get; set; }
-        public int RoomId { get; set; }
+        public int? RoomId { get; set; }
         [ForeignKey("RoomId")]
-        public virtual ICollection<Room> Rooms{ get; set; }
+        public virtual Room Room{ get; set; }
     }
 }

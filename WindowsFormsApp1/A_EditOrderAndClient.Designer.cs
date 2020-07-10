@@ -54,8 +54,6 @@
             this.radioMale = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtRoomNumber = new System.Windows.Forms.TextBox();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,9 +65,13 @@
             this.departureDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalCostingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtRoomNumber = new System.Windows.Forms.TextBox();
+            this.orderBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -319,7 +321,7 @@
             this.departureDateDataGridViewTextBoxColumn,
             this.roomNumberDataGridViewTextBoxColumn,
             this.totalCostingDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.orderBindingSource;
+            this.dataGridView1.DataSource = this.orderBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(42, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -327,17 +329,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1101, 405);
             this.dataGridView1.TabIndex = 72;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // txtRoomNumber
-            // 
-            this.txtRoomNumber.Location = new System.Drawing.Point(858, 119);
-            this.txtRoomNumber.Name = "txtRoomNumber";
-            this.txtRoomNumber.Size = new System.Drawing.Size(156, 22);
-            this.txtRoomNumber.TabIndex = 73;
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(WindowsFormsApp1.Model.Order);
             // 
             // orderIdDataGridViewTextBoxColumn
             // 
@@ -428,6 +419,21 @@
             this.totalCostingDataGridViewTextBoxColumn.Name = "totalCostingDataGridViewTextBoxColumn";
             this.totalCostingDataGridViewTextBoxColumn.Width = 125;
             // 
+            // orderBindingSource
+            // 
+            this.orderBindingSource.DataSource = typeof(WindowsFormsApp1.Model.Order);
+            // 
+            // txtRoomNumber
+            // 
+            this.txtRoomNumber.Location = new System.Drawing.Point(858, 119);
+            this.txtRoomNumber.Name = "txtRoomNumber";
+            this.txtRoomNumber.Size = new System.Drawing.Size(156, 22);
+            this.txtRoomNumber.TabIndex = 73;
+            // 
+            // orderBindingSource1
+            // 
+            this.orderBindingSource1.DataSource = typeof(WindowsFormsApp1.Model.Order);
+            // 
             // A_EditOrderAndClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -465,6 +471,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,5 +518,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalCostingDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource orderBindingSource;
+        private System.Windows.Forms.BindingSource orderBindingSource1;
     }
 }

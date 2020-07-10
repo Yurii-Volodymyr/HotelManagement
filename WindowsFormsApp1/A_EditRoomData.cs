@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
     public partial class A_EditRoomData : Form
     {
         int indexRow;
-        //HotelWinFormsDbContext db;
+        //public HotelWinFormsDbContext db;
         public A_EditRoomData()
         {
             InitializeComponent();
@@ -45,7 +45,6 @@ namespace WindowsFormsApp1
                     if (db.Rooms.All(x => x.RoomNumber != txtRoomNumb.Text.Replace(" ", string.Empty).ToUpper()))
                     {
                         Room room = new Room();
-
                         room.Description = richTextBox1.Text;
                         room.PricePerWeek = Convert.ToDouble(txtPricePerWeek.Text);
                         room.RoomImage = (txtImgSource.Text);
@@ -60,15 +59,18 @@ namespace WindowsFormsApp1
 
                         room.RoomType = cbRoomType.Text;
                         room.RoomNumber = (txtRoomNumb.Text.Replace(" ", string.Empty).ToUpper());
+                        
                         db.Rooms.Add(room);
-                        int result = db.SaveChanges();
+                        var result = db.SaveChanges();
                         if (result > 0)
                         {
+                            MessageBox.Show("Room created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            roomBindingSource.DataSource = db.Rooms.ToList();
+
                             dataGridView1.Update();
                             dataGridView1.Refresh();
 
                             //this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
-                            MessageBox.Show("Room created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -110,6 +112,8 @@ namespace WindowsFormsApp1
 
                 if (result > 0)
                 {
+                    roomBindingSource.DataSource = db.Rooms.ToList();
+
                     dataGridView1.Update();
                     dataGridView1.Refresh();                    //this.roomsTableAdapter.Fill(this.roomsDataSet.Rooms);
                     MessageBox.Show("Room deleted", "Succeed", MessageBoxButtons.OK, MessageBoxIcon.Information);

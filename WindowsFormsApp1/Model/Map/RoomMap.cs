@@ -19,9 +19,8 @@ namespace WindowsFormsApp1.Model.Map
             this.Property(t => t.RoomNumber);
             this.Property(t => t.RoomType);
 
-            this.HasRequired<ServFoodOrder>(s => s.RoomOrder)
-                        .WithMany(g => g.Rooms)
-                        .HasForeignKey<int>(s => s.RoomOrderId);
+
+
 
             this.ToTable("Rooms","dbo");
             this.Property(t => t.RoomId).HasColumnName("RoomId");

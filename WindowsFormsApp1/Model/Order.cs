@@ -13,7 +13,7 @@ namespace WindowsFormsApp1.Model
     public class Order
     {
         [Key]
-        [ScaffoldColumn(false)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
         [Display(Name = "Client full name")]
         public string ClientName { get; set; }
@@ -28,7 +28,9 @@ namespace WindowsFormsApp1.Model
         public DateTime DepartureDate { get; set; }
         public string RoomNumber { get; set; }
         public double TotalCosting { get; set; }
-        public int UserOrderId { get; set; }
+        //[ForeignKey("UserOrder")]
+        //public int UserId{ get; set; }
+
         public virtual User UserOrder { get; set; }
     }
 }

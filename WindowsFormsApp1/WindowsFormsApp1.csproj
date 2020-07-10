@@ -89,9 +89,9 @@
     <Compile Include="A_EditOrderAndClient.Designer.cs">
       <DependentUpon>A_EditOrderAndClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006251504438_database.cs" />
-    <Compile Include="Migrations\202006251504438_database.designer.cs">
-      <DependentUpon>202006251504438_database.cs</DependentUpon>
+    <Compile Include="Migrations\202007081912590_test432.cs" />
+    <Compile Include="Migrations\202007081912590_test432.designer.cs">
+      <DependentUpon>202007081912590_test432.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Food.cs" />
@@ -182,8 +182,8 @@
     <EmbeddedResource Include="A_OrderForm.resx">
       <DependentUpon>A_OrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006251504438_database.resx">
-      <DependentUpon>202006251504438_database.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007081912590_test432.resx">
+      <DependentUpon>202007081912590_test432.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

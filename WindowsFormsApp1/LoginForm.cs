@@ -45,9 +45,16 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-
                         loginedRole = userLogin.UserRole.UserRoleName;
-                        roomId = userLogin.RoomUser.RoomId;
+                        if (loginedRole.ToLower() == "employee"|| loginedRole.ToLower()=="admin")
+                        {
+
+                        }
+                        else
+                        {
+
+                            roomId = userLogin.RoomUser.RoomId;
+                        }
                         this.Hide();
                         Form1 f = new Form1();
                         f.Show();

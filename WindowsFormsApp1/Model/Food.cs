@@ -12,6 +12,7 @@ namespace WindowsFormsApp1.Model
     public class Food
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int FoodId { get; set; }
         public string FoodName { get; set; }
         public double Price { get; set; }

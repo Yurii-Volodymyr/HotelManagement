@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             customizeDesign();
-            if (LoginForm.loginedRole == "Employee")
+            if (LoginForm.loginedRole.ToLower() == "Employee"|| LoginForm.loginedRole.ToLower() =="admin")
             {
                 btnEmployee.Visible = true;
             }
@@ -130,7 +130,7 @@ namespace WindowsFormsApp1
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            if (LoginForm.loginedRole == "Employee")
+            if (LoginForm.loginedRole.ToLower() == "employee"|| LoginForm.loginedRole.ToLower()=="admin")
                 showSubMenu(panelEmployeeSubmenu);
         }
 

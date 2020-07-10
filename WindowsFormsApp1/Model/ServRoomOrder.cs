@@ -12,8 +12,8 @@ namespace WindowsFormsApp1.Model
         public int ServRoomOrderId { get; set; }
         public string Towels { get; set; }
         public bool Cleening { get; set; }
-        public int RoomId { get; set; }
+        public int? RoomId { get; set; }
         [ForeignKey("RoomId")]
-        public virtual ICollection<Room> Rooms { get; set; }
+        public virtual Room Room { get; set; }
     }
 }

@@ -13,7 +13,6 @@ namespace WindowsFormsApp1.Model
         {
             this.Users = new HashSet<User>();
         }
-        [Key]
         public int UserRoleId { get; set; }
         public string UserRoleName { get; set; }
         public int UserId { get; set; }

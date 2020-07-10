@@ -11,6 +11,7 @@ namespace WindowsFormsApp1.Model
     public class User
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string Login{ get; set; }
         public string Password{ get; set; }
@@ -18,13 +19,11 @@ namespace WindowsFormsApp1.Model
         /// UserRole is a foreign key to UserRoles. Relation many(users)-to-one(role)
         /// </summary>
         public int UserRoleId { get; set; }
-        public int OrderId { get; set; }
-        public int RoomId { get; set; }
+
+
         [ForeignKey("UserRoleId")]
         public virtual UserRole UserRole { get; set; }
-        [ForeignKey("OrderId")]
         public virtual Order OrderUser { get; set; }
-        [ForeignKey("RoomId")]
         public virtual Room RoomUser { get; set; }
 
     }

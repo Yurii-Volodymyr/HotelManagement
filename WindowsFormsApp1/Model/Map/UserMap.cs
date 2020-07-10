@@ -17,13 +17,12 @@ namespace WindowsFormsApp1.Model.Map
             this.Property(t => t.Password).IsRequired();
             this.Property(t => t.UserRoleId).IsRequired();
 
-            this.HasRequired<Order>(s => s.OrderUser)
-                .WithRequiredPrincipal(ou => ou.UserOrder);
+            this.HasOptional<Order>(s => s.OrderUser)
+                .WithOptionalDependent(ou => ou.UserOrder);
             this.HasRequired<UserRole>(s => s.UserRole)
                 .WithMany(g => g.Users)
                 .HasForeignKey<int>(s => s.UserRoleId);
-            this.HasRequired<Room>(s => s.RoomUser)
-                .WithRequiredPrincipal(ou => ou.UserRoom);
+            this.HasOptional<Room>(s => s.RoomUser).WithOptionalDependent(ou => ou.UserRoom);
 
             this.ToTable("Users", "dbo");
             this.Property(t => t.UserId).HasColumnName("UserId");

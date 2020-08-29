@@ -52,7 +52,6 @@ namespace WindowsFormsApp1
                         }
                         else
                         {
-
                             roomId = userLogin.RoomUser.RoomId;
                         }
                         this.Hide();

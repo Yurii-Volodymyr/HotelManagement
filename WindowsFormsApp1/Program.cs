@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Windows.Forms;
-using WindowsFormsApp1.Domain;
+using Hotel.Domain;
 
 namespace WindowsFormsApp1
 {

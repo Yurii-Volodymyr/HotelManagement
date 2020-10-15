@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{98B83906-ECAE-48C8-A5F0-4358F65E733E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Main", "WindowsFormsApp1\Hotel.Main.csproj", "{98B83906-ECAE-48C8-A5F0-4358F65E733E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hotel.Domain", "Hotel.Domain\Hotel.Domain.csproj", "{49557718-E910-48D4-816F-EA30704CA81E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{98B83906-ECAE-48C8-A5F0-4358F65E733E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98B83906-ECAE-48C8-A5F0-4358F65E733E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98B83906-ECAE-48C8-A5F0-4358F65E733E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49557718-E910-48D4-816F-EA30704CA81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49557718-E910-48D4-816F-EA30704CA81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49557718-E910-48D4-816F-EA30704CA81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49557718-E910-48D4-816F-EA30704CA81E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

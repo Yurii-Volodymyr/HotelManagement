@@ -2,8 +2,8 @@
 using System.Data.Entity;
 using System.Linq;
 using System.Windows.Forms;
-using WindowsFormsApp1.Domain;
-using WindowsFormsApp1.Model;
+using Hotel.Domain;
+using Hotel.Domain.Model;
 
 namespace WindowsFormsApp1
 {

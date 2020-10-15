@@ -20,18 +20,17 @@ namespace WindowsFormsApp1
 
             LoginMethod();
         }
-        public static string loginedRole;
-        public static int roomId;
+        public static string LoginedRole { get; set; }
+        public static int RoomId { get; set; } = 0;
         private async void LoginMethod()
         {
             string login = txtLogin.Text;
             string password = txtPassword.Text;
             if (login == "" && password == "")
             {
-                this.Hide();
-                Form1 f = new Form1();
+                this.Hide();                
+                MainForm f = new MainForm("Guest");
                 f.Show();
-                loginedRole = "Guest";
             }
             else
             {
@@ -45,17 +44,17 @@ namespace WindowsFormsApp1
                     }
                     else
                     {
-                        loginedRole = userLogin.UserRole.UserRoleName;
-                        if (loginedRole.ToLower() == "employee"|| loginedRole.ToLower()=="admin")
+                        LoginedRole = userLogin.UserRole.UserRoleName;
+                        if (LoginedRole.ToLower() == "employee"|| LoginedRole.ToLower()=="admin")
                         {
 
                         }
                         else
                         {
-                            roomId = userLogin.RoomUser.RoomId;
+                            RoomId = userLogin.RoomUser.RoomId;
                         }
                         this.Hide();
-                        Form1 f = new Form1();
+                        MainForm f = new MainForm(LoginedRole);
                         f.Show();
                     }
                 }

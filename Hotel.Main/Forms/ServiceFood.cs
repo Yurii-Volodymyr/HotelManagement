@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
 
         private async void btnOrder_Click(object sender, EventArgs e)
         {
-            if (LoginForm.roomId != 0)
+            if (LoginForm.RoomId != 0)
             {
                 if (cbBurger.Text != "" || cbCake.Text != "" || cbPizza.Text != "")
                 {
@@ -36,9 +36,9 @@ namespace WindowsFormsApp1
                         servFood.Burger = cbBurger.Text;
                         servFood.Cake = cbCake.Text;
                         servFood.Pizza = cbPizza.Text;
-                        servFood.RoomId = LoginForm.roomId;
+                        servFood.RoomId = LoginForm.RoomId;
 
-                        Form1 form = new Form1();
+                        MainForm form = new MainForm(LoginForm.LoginedRole);
                         form.openChildForm(new ResultTrue());
 
                         db.ServiceFood.Add(servFood);

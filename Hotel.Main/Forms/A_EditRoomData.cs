@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 form1 = new Form1();
+            MainForm form1 = new MainForm(LoginForm.LoginedRole);
             form1.Show();
         }
 

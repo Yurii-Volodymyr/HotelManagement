@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            MainForm form1 = new MainForm(LoginForm.LoginedRole);
             this.Close();
             form1.Show();
         }

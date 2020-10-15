@@ -53,6 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HotelWinFormsDbContext.cs" />
+    <Compile Include="Migrations\202010151548270_init.cs" />
+    <Compile Include="Migrations\202010151548270_init.designer.cs">
+      <DependentUpon>202010151548270_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010151758457_relations.cs" />
+    <Compile Include="Migrations\202010151758457_relations.designer.cs">
+      <DependentUpon>202010151758457_relations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Food.cs" />
     <Compile Include="Model\Map\FoodMap.cs" />
     <Compile Include="Model\Map\OrderMap.cs" />
@@ -72,6 +81,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010151548270_init.resx">
+      <DependentUpon>202010151548270_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010151758457_relations.resx">
+      <DependentUpon>202010151758457_relations.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

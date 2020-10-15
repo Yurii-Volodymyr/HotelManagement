@@ -15,7 +15,6 @@ namespace Hotel.Domain.Model
         }
         public int UserRoleId { get; set; }
         public string UserRoleName { get; set; }
-        public int UserId { get; set; }
         public virtual ICollection<User> Users { get; set; }
     }
 

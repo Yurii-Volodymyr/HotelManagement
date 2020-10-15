@@ -3,13 +3,17 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        /// <summary>
+        /// main form
+        /// </summary>
+        /// <param name="loginedRole">depends which buttons will be displayed</param>
+        public MainForm(string loginedRole)
         {
             InitializeComponent();
             customizeDesign();
-            if (LoginForm.loginedRole.ToLower() == "Employee"|| LoginForm.loginedRole.ToLower() =="admin")
+            if (loginedRole.ToLower() == "Employee"|| loginedRole.ToLower() =="admin")
             {
                 btnEmployee.Visible = true;
             }
@@ -130,7 +134,7 @@ namespace WindowsFormsApp1
 
         private void btnEmployee_Click(object sender, EventArgs e)
         {
-            if (LoginForm.loginedRole.ToLower() == "employee"|| LoginForm.loginedRole.ToLower()=="admin")
+            if (LoginForm.LoginedRole.ToLower() == "employee"|| LoginForm.LoginedRole.ToLower()=="admin")
                 showSubMenu(panelEmployeeSubmenu);
         }
 
@@ -165,7 +169,7 @@ namespace WindowsFormsApp1
             lblTime.Text = DateTime.Now.ToLongTimeString();
         }
         //current date
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
             timer1.Start();
             lblTime.Text = DateTime.Now.ToLongTimeString();

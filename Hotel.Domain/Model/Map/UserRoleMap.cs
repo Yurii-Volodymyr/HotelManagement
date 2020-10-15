@@ -15,8 +15,7 @@ namespace Hotel.Domain.Model.Map
             this.Property(t => t.UserRoleName).IsRequired();
 
             this.HasMany(g => g.Users)
-                .WithRequired(s => s.UserRole)
-                .HasForeignKey<int>(s=>s.UserRoleId);
+                .WithRequired(s => s.UserRole);
 
             this.ToTable("UserRoles", "dbo");
             this.Property(x=>x.UserRoleId).HasColumnName("UserRoleId");

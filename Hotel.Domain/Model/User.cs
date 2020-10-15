@@ -19,10 +19,8 @@ namespace Hotel.Domain.Model
         /// UserRole is a foreign key to UserRoles. Relation many(users)-to-one(role)
         /// </summary>
         public int UserRoleId { get; set; }
-
-
-        [ForeignKey("UserRoleId")]
         public virtual UserRole UserRole { get; set; }
+
         public virtual Order OrderUser { get; set; }
         public virtual Room RoomUser { get; set; }
 

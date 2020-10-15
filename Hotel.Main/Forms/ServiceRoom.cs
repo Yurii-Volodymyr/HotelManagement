@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
 
         private async void btnOrder_Click(object sender, EventArgs e)
         {
-            if (LoginForm.roomId != 1)
+            if (LoginForm.RoomId != 1)
             {
                 if (cbTowels.Text != "" || cbCleening.Checked != false)
                 {
@@ -30,9 +30,9 @@ namespace WindowsFormsApp1
                         ServRoomOrder servRoom = new ServRoomOrder();
                         servRoom.Cleening = cbCleening.Checked;
                         servRoom.Towels = cbTowels.Text;
-                        servRoom.RoomId = LoginForm.roomId;
+                        servRoom.RoomId = LoginForm.RoomId;
                         this.Close();
-                        Form1 form = new Form1();
+                        MainForm form = new MainForm(LoginForm.LoginedRole);
                         form.openChildForm(new ResultTrue());
 
                         db.ServiceRoom.Add(servRoom);

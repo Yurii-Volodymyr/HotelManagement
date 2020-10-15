@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.btnAbout = new System.Windows.Forms.Button();
             this.panelEmployeeSubmenu = new System.Windows.Forms.Panel();
@@ -368,7 +368,7 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -382,9 +382,9 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(950, 600);
             this.MinimumSize = new System.Drawing.Size(950, 600);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "MainForm";
+            this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelSideMenu.ResumeLayout(false);
             this.panelEmployeeSubmenu.ResumeLayout(false);
             this.panelRoomsSubmenu.ResumeLayout(false);

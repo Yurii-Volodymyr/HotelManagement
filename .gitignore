@@ -3,3 +3,9 @@
 /WindowsFormsApp1/bin
 /WindowsFormsApp1/obj
 /WindowsFormsApp1/Migrations
+/obj
+/bin
+/Hotel.Domain/obj
+/Hotel.Domain/bin
+/Hotel.Main/obj
+/Hotel.Main/bin
